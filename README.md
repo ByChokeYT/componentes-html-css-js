@@ -1,4 +1,4 @@
-# 🚀 JS Components — Biblioteca de Componentes UI Vanilla
+# 🚀 Componentes HTML, CSS y JS — Biblioteca UI Vanilla
 
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/es/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/es/docs/Web/CSS)
@@ -25,8 +25,8 @@ El repositorio cuenta con **37 componentes** organizados en 13 categorías:
 
 | Categoría | Ruta | Cantidad | Descripción |
 | :--- | :--- | :---: | :--- |
-| 🔐 **Inicios de Sesión** | [`/inicios-sesion/`](./inicios-sesion/) | 9 | Formularios de Login/Registro con animaciones fluidas de tarjeta. |
-| 📊 **Barras Laterales** | [`/barras-laterales/`](./barras-laterales/) | 11 | Navbars y sidebars colapsables para Dashboards y Paneles Admin. |
+| 🔐 **Inicios de Sesión** | [`/inicios-sesion/`](./inicios-sesion/) | 9 | Formularios de Login/Registro con animaciones fluidas y autenticación biométrica. |
+| 📊 **Barras Laterales** | [`/barras-laterales/`](./barras-laterales/) | 11 | Navbars y sidebars colapsables con tarjetas de perfil y menú acordeón. |
 | 🎠 **Carruseles** | [`/carruseles/`](./carruseles/) | 2 | Carruseles 3D y sliders para tarjetas de productos. |
 | 🚩 **Banners** | [`/banners/`](./banners/) | 2 | Encabezados Hero con fondos animados e integración de video. |
 | 🎛️ **Controles UI** | [`/controles/`](./controles/) | 4 | Botones animados, toggles e interruptores interactivos. |
@@ -41,21 +41,12 @@ El repositorio cuenta con **37 componentes** organizados en 13 categorías:
 
 ---
 
-## 🔍 Destacado: Inicio de Sesión 1 (`inicios-sesion/inicio-sesion-1`)
-
-El componente [`inicio-sesion-1`](./inicios-sesion/inicio-sesion-1/index.html) destaca por:
-- **Card Slider Dual:** Transición suave con GPU-acceleration entre *Ingresar* y *Registro*.
-- **Diseño Adaptativo:** Ancho optimizado a `820px` con sombra suave `rgba(70, 114, 255, 0.12)`.
-- **Interacción Total:** Enlaces vinculados para alternar formularios mediante un clic.
-
----
-
 ## 🖥️ Cómo Ejecutar el Catálogo Interactivo
 
 1. **Clona el repositorio:**
    ```bash
-   git clone https://github.com/tuusuario/js-components.git
-   cd js-components
+   git clone https://github.com/tuusuario/componentes-html-css-js.git
+   cd componentes-html-css-js
    ```
 
 2. **Abre el Showcase:**
@@ -64,7 +55,7 @@ El componente [`inicio-sesion-1`](./inicios-sesion/inicio-sesion-1/index.html) d
 3. **Despliegue en GitHub Pages (Opcional):**
    - Ve a **Settings > Pages** en tu repositorio de GitHub.
    - En **Branch**, selecciona `main` y guarda.
-   - Tu catálogo estará disponible públicamente en `https://tuusuario.github.io/js-components/`.
+   - Tu catálogo estará disponible públicamente en `https://tuusuario.github.io/componentes-html-css-js/`.
 
 ---
 
@@ -74,7 +65,7 @@ El componente [`inicio-sesion-1`](./inicios-sesion/inicio-sesion-1/index.html) d
 - **CSS3:** Variables CSS, Flexbox, CSS Grid y micro-animaciones.
 - **Vanilla JavaScript (ES6+):** Manipulación limpia del DOM sin dependencias.
 - **GSAP (GreenSock):** Librería para animaciones complejas de alto rendimiento.
-- **Google Fonts & Iconos:** Poppins, Outfit, Boxicons y Akar Icons.
+- **Google Fonts & Iconos:** Plus Jakarta Sans, Outfit, Poppins y Boxicons.
 
 ---
 
