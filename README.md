@@ -1,4 +1,4 @@
-# 🚀 Componentes HTML, CSS y JS — Biblioteca UI Vanilla
+# 🚀 Componentes HTML, CSS y JavaScript — Biblioteca UI Vanilla
 
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/es/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/es/docs/Web/CSS)
@@ -45,8 +45,8 @@ El repositorio cuenta con **37 componentes** organizados en 13 categorías:
 
 1. **Clona el repositorio:**
    ```bash
-   git clone https://github.com/tuusuario/componentes-html-css-js.git
-   cd componentes-html-css-js
+   git clone https://github.com/tuusuario/componentes-html-css-javascript.git
+   cd componentes-html-css-javascript
    ```
 
 2. **Abre el Showcase:**
