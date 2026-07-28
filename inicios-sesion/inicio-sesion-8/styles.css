@@ -1,0 +1,363 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #4baefe;
+  --color-accent: #9035ff;
+  --color-muted: rgba(255, 255, 255, 0.55);
+  --color-card-bg: rgba(24, 20, 38, 0.78);
+  --font-title: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  min-height: 100vh;
+  background: #141022;
+  background-image: 
+    radial-gradient(at 20% 20%, rgba(75, 174, 254, 0.12) 0px, transparent 50%),
+    radial-gradient(at 80% 80%, rgba(144, 53, 255, 0.15) 0px, transparent 50%);
+  font-family: var(--font-body);
+  color: #f9f8fa;
+  overflow-x: hidden;
+  padding: 20px;
+}
+
+/* Tarjeta Cristalina Flotante */
+.card {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  width: 400px;
+  max-width: 100%;
+  padding: 48px 0 36px;
+  border-radius: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--color-card-bg);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    0 30px 60px rgba(0, 0, 0, 0.5),
+    0 0 50px rgba(144, 53, 255, 0.2);
+}
+
+/* Olas Fluidas Animadas en el Fondo de la Tarjeta */
+.background {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 220px;
+  width: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.background svg {
+  width: 100%;
+  height: 100%;
+  transform: scaleY(1.6) scaleX(1.4);
+  transform-origin: bottom;
+  display: block;
+  pointer-events: none;
+}
+
+/* Garantizar que los elementos interactivos queden por encima de las olas */
+.card img.logo,
+.toggle,
+.forms,
+.footer {
+  position: relative;
+  z-index: 2;
+}
+
+.card img.logo {
+  width: 64px;
+  height: auto;
+  margin: 12px 0 20px;
+  filter: drop-shadow(0 4px 14px rgba(75, 174, 254, 0.4));
+}
+
+/* Pestañas de Alternancia superior */
+.toggle {
+  position: relative;
+  display: flex;
+  width: 82%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.toggle::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, #4baefe 0%, #9035ff 100%);
+  box-shadow: 0 0 12px rgba(75, 174, 254, 0.8);
+  pointer-events: none;
+  translate: 100% 0;
+  transition: translate 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+
+.toggle.login-active::after {
+  translate: 0 0;
+}
+
+.toggle button {
+  flex: 1;
+  height: 48px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.5;
+  color: rgba(255, 255, 255, 0.95);
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle button span {
+  position: relative;
+  z-index: 1;
+}
+
+.toggle button:hover {
+  opacity: 0.85;
+}
+
+.toggle.login-active button:first-child {
+  opacity: 1;
+  color: #ffffff;
+}
+
+.toggle.login-active button:last-child {
+  opacity: 0.5;
+}
+
+.toggle:not(.login-active) button:last-child {
+  opacity: 1;
+  color: #ffffff;
+}
+
+.toggle:not(.login-active) button:first-child {
+  opacity: 0.5;
+}
+
+/* Formularios Deslizantes */
+.forms {
+  position: relative;
+  height: 310px;
+  width: 100%;
+  overflow: hidden;
+}
+
+form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  padding: 32px 36px 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.register {
+  translate: 100% 0;
+}
+
+.login {
+  translate: -100% 0;
+}
+
+.form.active {
+  translate: 0 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Textbox con etiqueta flotante e icono */
+.textbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  translate: 0 -50%;
+  font-size: 20px;
+  color: var(--color-muted);
+  pointer-events: none;
+  transition: color 0.25s ease;
+}
+
+.textbox label {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  translate: 0 -50%;
+  transform-origin: 0 50%;
+  pointer-events: none;
+  color: var(--color-muted);
+  font-size: 13px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.textbox input {
+  width: 100%;
+  height: 48px;
+  padding: 0 34px 0 30px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  outline: none;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 14px;
+  transition: border-color 0.25s ease;
+}
+
+.textbox input:focus {
+  border-bottom-color: var(--color-primary);
+}
+
+.textbox input:focus ~ .input-icon {
+  color: var(--color-primary);
+}
+
+/* Animación de etiqueta flotante */
+.textbox input:focus ~ label,
+.textbox input:not(:placeholder-shown) ~ label {
+  scale: 0.8;
+  translate: -26px -32px;
+  color: var(--color-primary);
+}
+
+/* Toggle Contraseña */
+.toggle-pass-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  translate: 0 -50%;
+  background: transparent;
+  border: 0;
+  color: var(--color-muted);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: color 0.2s;
+}
+
+.toggle-pass-btn:hover {
+  color: var(--color-primary);
+}
+
+/* Olvidaste contraseña link */
+.forgot-link {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  text-align: right;
+  margin: -4px 0 4px;
+  transition: color 0.2s;
+}
+
+.forgot-link:hover {
+  color: var(--color-primary);
+}
+
+/* Botón Submit Interactivo */
+.submit-btn {
+  position: relative;
+  height: 48px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  margin-top: 4px;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+
+.submit-btn p {
+  margin: 0;
+  transition: transform 0.25s ease;
+}
+
+.submit-btn .arrow-icon {
+  font-size: 20px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  opacity: 0.85;
+}
+
+.submit-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(75, 174, 254, 0.5);
+  box-shadow: 0 6px 20px rgba(75, 174, 254, 0.25);
+}
+
+.submit-btn:hover p {
+  transform: translateX(-4px);
+}
+
+.submit-btn:hover .arrow-icon {
+  transform: translateX(4px);
+  opacity: 1;
+}
+
+.submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* Footer de Términos */
+.footer {
+  margin: 28px 28px 0;
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--color-muted);
+}
+
+.footer a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}

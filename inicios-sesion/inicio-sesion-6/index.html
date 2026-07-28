@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio de Sesión — Hero Toggle UI</title>
+    
+    <!-- Fuentes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Iconos Vectoriales Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Animación Fondo Orbit -->
+    <img src="blob.svg" class="blob" alt="Background Glow" />
+    <div class="orbit"></div>
+
+    <!-- Tarjeta Principal -->
+    <div class="card">
+      <div class="hero">
+        <div class="hero-overlay"></div>
+        <div class="toggle login-active">
+          <button type="button" onclick="toggleView('login')" id="btn-toggle-login">
+            <span>Iniciar Sesión</span>
+          </button>
+          <button type="button" onclick="toggleView('register')" id="btn-toggle-register">
+            <span>Registrarse</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="forms">
+        <!-- Formulario Iniciar Sesión -->
+        <form class="form login active" onsubmit="event.preventDefault()">
+          <h2>¡Bienvenido de nuevo!</h2>
+
+          <div class="input-group">
+            <i class="bx bx-envelope input-icon"></i>
+            <input required type="email" placeholder="Correo electrónico" autocomplete="email" />
+          </div>
+
+          <div class="input-group">
+            <i class="bx bx-lock-alt input-icon"></i>
+            <input required type="password" class="pass-input" placeholder="Contraseña" autocomplete="current-password" />
+            <button type="button" class="toggle-pass-btn" aria-label="Mostrar u ocultar contraseña">
+              <i class="bx bx-hide"></i>
+            </button>
+          </div>
+
+          <a href="#" class="forgot-link">¿Olvidaste tu contraseña?</a>
+
+          <button type="submit" class="submit-btn">
+            <span>INICIAR SESIÓN</span>
+          </button>
+        </form>
+
+        <!-- Formulario Registrarse -->
+        <form class="form register" onsubmit="event.preventDefault()">
+          <h2>Comienza tu viaje</h2>
+
+          <div class="input-group">
+            <i class="bx bx-user input-icon"></i>
+            <input required type="text" placeholder="Nombre completo" autocomplete="name" />
+          </div>
+
+          <div class="input-group">
+            <i class="bx bx-envelope input-icon"></i>
+            <input required type="email" placeholder="Correo electrónico" autocomplete="email" />
+          </div>
+
+          <div class="input-group">
+            <i class="bx bx-lock-alt input-icon"></i>
+            <input required type="password" class="pass-input" placeholder="Contraseña" autocomplete="new-password" />
+            <button type="button" class="toggle-pass-btn" aria-label="Mostrar u ocultar contraseña">
+              <i class="bx bx-hide"></i>
+            </button>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            <span>CREAR CUENTA</span>
+          </button>
+        </form>
+      </div>
+
+      <p class="terms-text">
+        Al utilizar este software aceptas nuestros términos y condiciones, política de privacidad y normas de uso.
+      </p>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

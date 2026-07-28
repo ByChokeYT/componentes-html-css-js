@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio de Sesión — Kinetic Cyber Auth UI</title>
+    
+    <!-- Fuentes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Iconos Vectoriales Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Cyber Grid & Scanner Light Animation -->
+    <div class="cyber-grid"></div>
+    <div class="scanner-beam"></div>
+
+    <div class="card">
+      <!-- Encabezado con Logo KINETIC y Badge de Seguridad -->
+      <div class="card-header">
+        <img src="logo.svg" alt="Logo Kinetic" class="brand-logo" />
+        <span class="security-badge">
+          <i class="bx bx-shield-quarter"></i> Biométrico SSL
+        </span>
+      </div>
+
+      <!-- Conmutador Neon Tab -->
+      <div class="toggle login-active">
+        <button type="button" onclick="toggleView('login')" id="btn-toggle-login">
+          <span>Acceso Seguro</span>
+        </button>
+        <button type="button" onclick="toggleView('register')" id="btn-toggle-register">
+          <span>Nueva Cuenta</span>
+        </button>
+      </div>
+
+      <!-- Formularios -->
+      <div class="forms">
+        <!-- Formulario Iniciar Sesión -->
+        <form class="form login active" onsubmit="event.preventDefault()">
+          <div class="form-title">
+            <h3>Iniciar Sesión</h3>
+            <p>Accede con tus credenciales cifradas</p>
+          </div>
+
+          <div class="input-group">
+            <i class="bx bx-envelope input-icon"></i>
+            <input required type="email" autocomplete="email" placeholder="Correo electrónico" id="signin-email" />
+          </div>
+
+          <div class="input-group">
+            <i class="bx bx-lock-alt input-icon"></i>
+            <input required type="password" class="pass-input" autocomplete="current-password" placeholder="Contraseña" id="signin-pass" />
+            <button type="button" class="toggle-pass-btn" aria-label="Mostrar u ocultar contraseña">
+              <i class="bx bx-hide"></i>
+            </button>
+          </div>
+
+          <div class="form-row">
+            <label class="checkbox-container">
+              <input type="checkbox" />
+              <span>Recordar sesión</span>
+            </label>
+            <a href="#" class="forgot-link">¿Olvidaste clave?</a>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            <span>INGRESAR AHORA</span>
+            <i class="bx bx-right-arrow-alt arrow-icon"></i>
+          </button>
+
+          <!-- Botón de Acceso Biométrico -->
+          <button type="button" class="biometric-btn" title="Autenticación Biométrica">
+            <i class="bx bx-fingerprint"></i>
+            <span>Acceso rápido con Huella / FaceID</span>
+          </button>
+
+          <div class="social-divider">
+            <span>o continúa con</span>
+          </div>
+
+          <div class="social-buttons">
+            <button type="button" class="social-btn"><i class="bx bxl-google"></i> Google</button>
+            <button type="button" class="social-btn"><i class="bx bxl-github"></i> GitHub</button>
+          </div>
+        </form>
+
+        <!-- Formulario Registrarse -->
+        <form class="form register" onsubmit="event.preventDefault()">
+          <div class="form-title">
+            <h3>Crear Cuenta</h3>
+            <p>Registra tus datos y genera tu llave de acceso</p>
+          </div>
+
+          <div class="input-group">
+            <i class="bx bx-user input-icon"></i>
+            <input required type="text" autocomplete="name" placeholder="Nombre completo" id="signup-name" />
+          </div>
+
+          <div class="input-group">
+            <i class="bx bx-envelope input-icon"></i>
+            <input required type="email" autocomplete="email" placeholder="Correo electrónico" id="signup-email" />
+          </div>
+
+          <div class="input-group">
+            <i class="bx bx-lock-alt input-icon"></i>
+            <input required type="password" class="pass-input" autocomplete="new-password" placeholder="Crear contraseña" id="signup-pass" />
+            <button type="button" class="toggle-pass-btn" aria-label="Mostrar u ocultar contraseña">
+              <i class="bx bx-hide"></i>
+            </button>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            <span>REGISTRAR MI CUENTA</span>
+            <i class="bx bx-right-arrow-alt arrow-icon"></i>
+          </button>
+
+          <div class="social-divider">
+            <span>o regístrate con</span>
+          </div>
+
+          <div class="social-buttons">
+            <button type="button" class="social-btn"><i class="bx bxl-google"></i> Google</button>
+            <button type="button" class="social-btn"><i class="bx bxl-github"></i> GitHub</button>
+          </div>
+        </form>
+      </div>
+
+      <p class="footer">
+        Protegido por cifrado de extremo a extremo &bull; <a href="#">Términos</a> y <a href="#">Privacidad</a>
+      </p>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

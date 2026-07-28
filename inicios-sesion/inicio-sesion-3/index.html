@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio de Sesión 3</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="card">
+      <div class="card-bg"></div>
+      
+      <!-- Panel Hero (Registro a Login) -->
+      <div class="hero signup active">
+        <h2>¡Bienvenido!</h2>
+        <p>Inicia sesión con tus datos para acceder a tu panel de control.</p>
+        <button type="button" onclick="toggleView()">INGRESAR</button>
+      </div>
+      
+      <!-- Formulario de Registro -->
+      <div class="form signup active">
+        <h2>Crear Cuenta</h2>
+        <div class="sso">
+          <a href="#" class="fa-brands fa-facebook" title="Facebook"></a>
+          <a href="#" class="fa-brands fa-twitter" title="Twitter"></a>
+          <a href="#" class="fa-brands fa-linkedin" title="LinkedIn"></a>
+        </div>
+        <p>O usa tu correo electrónico</p>
+        <form onsubmit="event.preventDefault()">
+          <input type="text" placeholder="Nombre completo" required />
+          <input type="email" placeholder="Correo electrónico" required />
+          <input type="password" placeholder="Contraseña" required />
+          <button type="submit">REGISTRARSE</button>
+        </form>
+      </div>
+
+      <!-- Panel Hero (Login a Registro) -->
+      <div class="hero signin">
+        <h2>¡Hola de nuevo!</h2>
+        <p>¿Aún no tienes cuenta? Regístrate hoy y accede a todas las funciones.</p>
+        <button type="button" onclick="toggleView()">REGISTRO</button>
+      </div>
+
+      <!-- Formulario de Iniciar Sesión -->
+      <div class="form signin">
+        <h2>Iniciar Sesión</h2>
+        <div class="sso">
+          <a href="#" class="fa-brands fa-facebook" title="Facebook"></a>
+          <a href="#" class="fa-brands fa-twitter" title="Twitter"></a>
+          <a href="#" class="fa-brands fa-linkedin" title="LinkedIn"></a>
+        </div>
+        <p>O ingresa con tu correo</p>
+        <form onsubmit="event.preventDefault()">
+          <input type="email" placeholder="Correo electrónico" required />
+          <input type="password" placeholder="Contraseña" required />
+          <a href="#" style="cursor: pointer;">¿Olvidaste tu contraseña?</a>
+          <button type="submit">INGRESAR</button>
+        </form>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

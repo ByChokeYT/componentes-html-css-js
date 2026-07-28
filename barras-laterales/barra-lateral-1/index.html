@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barra Lateral 1 — Menú Acordeón Pro</title>
+    
+    <!-- Fuentes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Iconos Vectoriales Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <aside class="sidebar" id="sidebar">
+      <header class="sidebar-header">
+        <button
+          type="button"
+          class="sidebar-burger"
+          onclick="toggleSidebar()"
+          aria-label="Alternar menú lateral"
+          title="Colapsar o expandir menú"
+        >
+          <i class="bx bx-menu"></i>
+        </button>
+        <div class="logo-wrapper">
+          <img src="logo.svg" alt="Logo de la marca" class="logo-img" />
+        </div>
+      </header>
+
+      <div class="sidebar-content">
+        <!-- Sección 1: General -->
+        <div class="menu-section">
+          <span class="section-label">GENERAL</span>
+          <ul class="menu-list">
+            <li>
+              <button type="button" onclick="onClick(this)">
+                <i class="bx bx-home-alt-2"></i>
+                <p>Inicio</p>
+              </button>
+            </li>
+            <li>
+              <button type="button" onclick="onClick(this)">
+                <i class="bx bx-grid-alt"></i>
+                <p>Panel Principal</p>
+              </button>
+            </li>
+            <li>
+              <button type="button" onclick="onClick(this)">
+                <i class="bx bx-bell"></i>
+                <p>Notificaciones</p>
+                <span class="counter-badge">5</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Sección 2: Gestión -->
+        <div class="menu-section">
+          <span class="section-label">GESTIÓN</span>
+          <ul class="menu-list">
+            <li>
+              <button type="button" onclick="onClick(this)">
+                <i class="bx bx-package"></i>
+                <p>Productos</p>
+                <i class="bx bx-chevron-down chevron"></i>
+              </button>
+              <div class="sub-menu">
+                <ul>
+                  <li>
+                    <button type="button">Digitales</button>
+                  </li>
+                  <li>
+                    <button type="button">Físicos</button>
+                  </li>
+                  <li>
+                    <button type="button">Inventario</button>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <button type="button" onclick="onClick(this)">
+                <i class="bx bx-plus-circle"></i>
+                <p>Crear Nuevo</p>
+                <i class="bx bx-chevron-down chevron"></i>
+              </button>
+              <div class="sub-menu">
+                <ul>
+                  <li>
+                    <button type="button">Artículo</button>
+                  </li>
+                  <li>
+                    <button type="button">Documento</button>
+                  </li>
+                  <li>
+                    <button type="button">Video</button>
+                  </li>
+                  <li>
+                    <button type="button">Presentación</button>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <button type="button" onclick="onClick(this)">
+                <i class="bx bx-cart"></i>
+                <p>Catálogo</p>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Sección 3: Ajustes -->
+        <div class="menu-section">
+          <span class="section-label">SISTEMA</span>
+          <ul class="menu-list">
+            <li>
+              <button type="button" onclick="onClick(this)">
+                <i class="bx bx-user"></i>
+                <p>Perfil</p>
+                <i class="bx bx-chevron-down chevron"></i>
+              </button>
+              <div class="sub-menu">
+                <ul>
+                  <li>
+                    <button type="button">Avatar / Foto</button>
+                  </li>
+                  <li>
+                    <button type="button">Tema Visual</button>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <button type="button" onclick="onClick(this)">
+                <i class="bx bx-shield-quarter"></i>
+                <p>Cuenta & Seguridad</p>
+              </button>
+            </li>
+            <li>
+              <button type="button" onclick="onClick(this)">
+                <i class="bx bx-cog"></i>
+                <p>Configuración</p>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- User Profile Badge Footer -->
+      <footer class="sidebar-footer">
+        <div class="user-avatar">
+          <span>AR</span>
+        </div>
+        <div class="user-details">
+          <strong class="user-name">Alex Rivera</strong>
+          <span class="user-role">Administrador</span>
+        </div>
+        <button type="button" class="logout-btn" title="Cerrar sesión">
+          <i class="bx bx-log-out"></i>
+        </button>
+      </footer>
+    </aside>
+
+    <script src="main.js"></script>
+  </body>
+</html>

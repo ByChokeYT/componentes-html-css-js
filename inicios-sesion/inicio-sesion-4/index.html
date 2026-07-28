@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio de Sesión — Modern UI</title>
+    
+    <!-- Fuentes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Iconos Vectoriales Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="card">
+      <div class="card-bg card-bg-1"></div>
+      <div class="card-bg card-bg-2"></div>
+      
+      <img class="logo logo-1" src="logo.svg" alt="Logo de la marca" />
+      <img class="logo logo-2" src="logo.svg" alt="Logo de la marca" />
+
+      <!-- Formulario Iniciar Sesión -->
+      <div class="form signin">
+        <form onsubmit="event.preventDefault()">
+          <div class="form-header">
+            <h2>Iniciar Sesión</h2>
+            <p class="subtitle">Bienvenido de nuevo, ingresa tus datos</p>
+          </div>
+
+          <div class="input-group">
+            <i class="bx bx-envelope input-icon"></i>
+            <input type="email" placeholder="Correo electrónico" required autocomplete="email" />
+          </div>
+
+          <div class="input-group">
+            <i class="bx bx-lock-alt input-icon"></i>
+            <input type="password" class="pass-input" placeholder="Contraseña" required autocomplete="current-password" />
+            <button type="button" class="toggle-pass-btn" aria-label="Mostrar u ocultar contraseña">
+              <i class="bx bx-hide"></i>
+            </button>
+          </div>
+
+          <div class="form-options">
+            <label class="remember-me">
+              <input type="checkbox" />
+              <span>Recordarme</span>
+            </label>
+            <a href="#" class="forgot-link">¿Olvidaste tu contraseña?</a>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            <span>INICIAR SESIÓN</span>
+            <i class="bx bx-right-arrow-alt btn-icon"></i>
+          </button>
+
+          <div class="social-divider">
+            <span>o continúa con</span>
+          </div>
+
+          <div class="social-buttons">
+            <button type="button" class="social-btn" title="Iniciar sesión con Google">
+              <i class="bx bxl-google"></i>
+            </button>
+            <button type="button" class="social-btn" title="Iniciar sesión con GitHub">
+              <i class="bx bxl-github"></i>
+            </button>
+            <button type="button" class="social-btn" title="Iniciar sesión con Apple">
+              <i class="bx bxl-apple"></i>
+            </button>
+          </div>
+
+          <a onclick="toggleView()" role="button" tabindex="0" class="toggle-link">
+            ¿No tienes una cuenta? <em>Regístrate gratis</em>
+          </a>
+        </form>
+      </div>
+
+      <!-- Formulario Registrarse -->
+      <div class="form signup active">
+        <form onsubmit="event.preventDefault()">
+          <div class="form-header">
+            <h2>Crear Cuenta</h2>
+            <p class="subtitle">Comienza gratis en menos de 1 minuto</p>
+          </div>
+
+          <div class="input-group">
+            <i class="bx bx-user input-icon"></i>
+            <input type="text" placeholder="Nombre completo" required autocomplete="name" />
+          </div>
+
+          <div class="input-group">
+            <i class="bx bx-envelope input-icon"></i>
+            <input type="email" placeholder="Correo electrónico" required autocomplete="email" />
+          </div>
+
+          <div class="input-group">
+            <i class="bx bx-lock-alt input-icon"></i>
+            <input type="password" class="pass-input" placeholder="Contraseña" required autocomplete="new-password" />
+            <button type="button" class="toggle-pass-btn" aria-label="Mostrar u ocultar contraseña">
+              <i class="bx bx-hide"></i>
+            </button>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            <span>REGISTRARSE</span>
+            <i class="bx bx-right-arrow-alt btn-icon"></i>
+          </button>
+
+          <div class="social-divider">
+            <span>o regístrate con</span>
+          </div>
+
+          <div class="social-buttons">
+            <button type="button" class="social-btn" title="Registrarse con Google">
+              <i class="bx bxl-google"></i>
+            </button>
+            <button type="button" class="social-btn" title="Registrarse con GitHub">
+              <i class="bx bxl-github"></i>
+            </button>
+            <button type="button" class="social-btn" title="Registrarse con Apple">
+              <i class="bx bxl-apple"></i>
+            </button>
+          </div>
+
+          <a onclick="toggleView()" role="button" tabindex="0" class="toggle-link">
+            ¿Ya tienes una cuenta? <em>Inicia sesión</em>
+          </a>
+        </form>
+      </div>
+    </div>
+    
+    <script src="main.js"></script>
+  </body>
+</html>

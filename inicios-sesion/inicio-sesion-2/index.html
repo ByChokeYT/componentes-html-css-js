@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio de Sesión II — Modern Split UI</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Boxicons for modern icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="login-wrapper">
+      <!-- Tarjeta Principal -->
+      <div class="login-card">
+        
+        <!-- Panel Izquierdo: Hero Brand & Art -->
+        <div class="brand-panel">
+          <div class="ambient-glow"></div>
+          <div class="brand-header">
+            <div class="brand-logo">
+              <img src="assets/logo.svg" alt="Logo" />
+              <span>DevPortal</span>
+            </div>
+            <span class="version-tag">v2.0</span>
+          </div>
+
+          <div class="brand-body">
+            <div class="hero-graphic">
+              <img src="assets/signin.svg" alt="Ilustración Hero" id="hero-img" />
+            </div>
+            <div class="brand-quote">
+              <h2 id="hero-title">Accede a tu Panel de Control</h2>
+              <p id="hero-desc">Gestiona tus proyectos, componentes y aplicaciones web en un solo lugar.</p>
+            </div>
+          </div>
+
+          <div class="brand-footer">
+            <div class="testimonial-badge">
+              <div class="avatars">
+                <span class="avatar-dot avatar-1"></span>
+                <span class="avatar-dot avatar-2"></span>
+                <span class="avatar-dot avatar-3"></span>
+              </div>
+              <span>+2,400 desarrolladores activos</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel Derecho: Formularios -->
+        <div class="form-panel">
+          <!-- Conmutador de Pestañas (Tabs) -->
+          <div class="auth-tabs">
+            <button
+              type="button"
+              class="tab-btn active"
+              id="tab-signin"
+              onclick="switchAuthTab('signin')"
+            >
+              Iniciar Sesión
+            </button>
+            <button
+              type="button"
+              class="tab-btn"
+              id="tab-signup"
+              onclick="switchAuthTab('signup')"
+            >
+              Registrarse
+            </button>
+            <span class="tab-indicator" id="tab-indicator"></span>
+          </div>
+
+          <!-- Contenedor de Formularios -->
+          <div class="forms-wrapper">
+            
+            <!-- Formulario Iniciar Sesión -->
+            <form id="form-signin" class="auth-form active" onsubmit="event.preventDefault()">
+              <div class="form-header">
+                <h3>¡Hola de nuevo! 👋</h3>
+                <p>Ingresa tus datos para acceder a tu cuenta.</p>
+              </div>
+
+              <!-- Botones de Autenticación Social -->
+              <div class="social-auth">
+                <button type="button" class="social-btn">
+                  <i class="bx bxl-google"></i>
+                  <span>Google</span>
+                </button>
+                <button type="button" class="social-btn">
+                  <i class="bx bxl-github"></i>
+                  <span>GitHub</span>
+                </button>
+              </div>
+
+              <div class="divider">
+                <span>o con tu correo</span>
+              </div>
+
+              <div class="input-group">
+                <label for="signin-email">Correo Electrónico</label>
+                <div class="input-field">
+                  <i class="bx bx-envelope"></i>
+                  <input
+                    type="email"
+                    id="signin-email"
+                    placeholder="ejemplo@correo.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="input-group">
+                <div class="label-row">
+                  <label for="signin-password">Contraseña</label>
+                  <a href="#" class="forgot-link">¿Olvidaste tu contraseña?</a>
+                </div>
+                <div class="input-field">
+                  <i class="bx bx-lock-alt"></i>
+                  <input
+                    type="password"
+                    id="signin-password"
+                    placeholder="••••••••••••"
+                    required
+                  />
+                  <button type="button" class="toggle-password" onclick="togglePasswordVisibility('signin-password', this)">
+                    <i class="bx bx-hide"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="remember-row">
+                <label class="checkbox-container">
+                  <input type="checkbox" checked />
+                  <span class="checkmark"></span>
+                  Recordar mi sesión por 30 días
+                </label>
+              </div>
+
+              <button type="submit" class="submit-btn">
+                <span>INGRESAR A LA CUENTA</span>
+                <i class="bx bx-right-arrow-alt"></i>
+              </button>
+            </form>
+
+            <!-- Formulario Registrarse -->
+            <form id="form-signup" class="auth-form" onsubmit="event.preventDefault()">
+              <div class="form-header">
+                <h3>Crea tu cuenta gratis 🚀</h3>
+                <p>Comienza a construir proyectos en minutos.</p>
+              </div>
+
+              <div class="input-group">
+                <label for="signup-name">Nombre Completo</label>
+                <div class="input-field">
+                  <i class="bx bx-user"></i>
+                  <input
+                    type="text"
+                    id="signup-name"
+                    placeholder="Carlos Mendoza"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label for="signup-email">Correo Electrónico</label>
+                <div class="input-field">
+                  <i class="bx bx-envelope"></i>
+                  <input
+                    type="email"
+                    id="signup-email"
+                    placeholder="ejemplo@correo.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label for="signup-password">Contraseña Segura</label>
+                <div class="input-field">
+                  <i class="bx bx-lock-alt"></i>
+                  <input
+                    type="password"
+                    id="signup-password"
+                    placeholder="Mínimo 8 caracteres"
+                    required
+                  />
+                  <button type="button" class="toggle-password" onclick="togglePasswordVisibility('signup-password', this)">
+                    <i class="bx bx-hide"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="remember-row">
+                <label class="checkbox-container">
+                  <input type="checkbox" required />
+                  <span class="checkmark"></span>
+                  Acepto los <a href="#">Términos de Servicio</a> y la <a href="#">Política de Privacidad</a>.
+                </label>
+              </div>
+
+              <button type="submit" class="submit-btn">
+                <span>CREAR MI CUENTA</span>
+                <i class="bx bx-check-circle"></i>
+              </button>
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

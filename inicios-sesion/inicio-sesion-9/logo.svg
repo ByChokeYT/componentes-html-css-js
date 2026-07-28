@@ -1,0 +1,28 @@
+<svg width="180" height="38" viewBox="0 0 180 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@800&amp;display=swap');
+      .brand-title {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 800;
+        font-size: 21px;
+        letter-spacing: 3.5px;
+        fill: #FFFFFF;
+      }
+    </style>
+    <linearGradient id="cyberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE" />
+      <stop offset="100%" stop-color="#7F00FF" />
+    </linearGradient>
+  </defs>
+
+  <!-- Cyber Hex Emblem -->
+  <g transform="translate(1, 1)">
+    <rect x="2" y="2" width="32" height="32" rx="10" fill="url(#cyberGrad)" fill-opacity="0.2" stroke="url(#cyberGrad)" stroke-width="1.5"/>
+    <path d="M18 9L27 14.5V23.5L18 29L9 23.5V14.5L18 9Z" stroke="#00F2FE" stroke-width="2" stroke-linejoin="round"/>
+    <circle cx="18" cy="19" r="3" fill="#00F2FE"/>
+  </g>
+
+  <!-- Typography -->
+  <text x="48" y="26" class="brand-title">KINETIC</text>
+</svg>
