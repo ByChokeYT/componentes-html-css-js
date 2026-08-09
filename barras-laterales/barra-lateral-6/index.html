@@ -1,58 +1,69 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sidebars</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Barra Lateral VI — Menú Flotante Glassmorphism</title>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0"
     />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <aside id="sidebar" class="sidebar">
       <div class="inner">
+        <!-- Encabezado con Botón Hamburguesa y Marca -->
         <header>
-          <button id="burger" class="sidebar-burger">
+          <button id="burger" class="sidebar-burger" type="button" title="Alternar menú">
             <span id="burgerIcon" class="material-symbols-outlined">menu</span>
           </button>
-          <img src="logo.svg" alt="logo" />
+          <img src="logo.svg" alt="Logo de la marca" class="logo-img" />
         </header>
-        <nav>
-          <button>
+
+        <!-- Navegación Principal -->
+        <nav id="nav-menu">
+          <button type="button" class="nav-btn active" data-tooltip="Inicio">
             <span class="material-symbols-outlined">home</span>
-            <p>home</p>
+            <p>Inicio</p>
           </button>
-          <button>
+          <button type="button" class="nav-btn" data-tooltip="Proyectos">
             <span class="material-symbols-outlined">build</span>
-            <p>build</p>
+            <p>Proyectos</p>
           </button>
-          <button>
+          <button type="button" class="nav-btn" data-tooltip="Servidores">
             <span class="material-symbols-outlined">cloud</span>
-            <p>cloud</p>
+            <p>Servidores</p>
           </button>
-          <button>
+          <button type="button" class="nav-btn" data-tooltip="Tecnologías">
             <span class="material-symbols-outlined">stacks</span>
-            <p>stacks</p>
+            <p>Tecnologías</p>
           </button>
-          <button>
+          <button type="button" class="nav-btn" data-tooltip="Mensajes">
             <span class="material-symbols-outlined">mail</span>
-            <p>mail</p>
+            <p>Mensajes</p>
           </button>
-          <button>
+          <button type="button" class="nav-btn settings-btn" data-tooltip="Configuración">
             <span class="material-symbols-outlined">settings</span>
-            <p>Settings</p>
+            <p>Configuración</p>
           </button>
         </nav>
       </div>
     </aside>
+
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>

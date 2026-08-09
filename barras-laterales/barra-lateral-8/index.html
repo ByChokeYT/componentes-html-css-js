@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sidebars</title>
+    <title>Barra Lateral VIII — Cristal Frosted con Indicador Azul</title>
     <link rel="stylesheet" href="styles.css" />
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -23,45 +24,46 @@
     <script src="https://unpkg.com/akar-icons-fonts"></script>
   </head>
   <body>
-    <aside class="sidebar">
+    <aside class="sidebar open" id="sidebar">
       <header>
         <button
           type="button"
-          className="sidebar-burger"
-          onClick="toggleSidebar()"
+          class="sidebar-burger"
+          onclick="toggleOpen()"
+          title="Alternar menú lateral"
         >
           <i class="ai-three-line-horizontal"></i>
         </button>
-        <img src="logo.svg" />
+        <img src="logo.svg" alt="Logo de la marca" class="logo-img" />
       </header>
-      <nav class="menu">
-        <button type="button">
+      <nav class="menu" id="sidebar-nav">
+        <button type="button" class="menu-btn active" data-tooltip="Inicio">
           <i class="ai-home-alt1"></i>
-          <p>Home</p>
+          <p>Inicio</p>
         </button>
-        <button type="button">
+        <button type="button" class="menu-btn" data-tooltip="Resumen">
           <i class="ai-eye-open"></i>
-          <p>Overview</p>
+          <p>Resumen</p>
         </button>
-        <button type="button">
+        <button type="button" class="menu-btn" data-tooltip="Calificaciones">
           <i class="ai-star"></i>
-          <p>Ratings</p>
+          <p>Calificaciones</p>
         </button>
-        <button type="button">
+        <button type="button" class="menu-btn" data-tooltip="Productos">
           <i class="ai-shipping-box-v1"></i>
-          <p>Products</p>
+          <p>Productos</p>
         </button>
-        <button type="button">
+        <button type="button" class="menu-btn" data-tooltip="Tendencias">
           <i class="ai-arrow-up-right"></i>
-          <p>Trends</p>
+          <p>Tendencias</p>
         </button>
-        <button type="button">
+        <button type="button" class="menu-btn" data-tooltip="Bandeja de Entrada">
           <i class="ai-envelope"></i>
-          <p>Inbox</p>
+          <p>Bandeja de Entrada</p>
         </button>
-        <button type="button">
+        <button type="button" class="menu-btn" data-tooltip="Configuración">
           <i class="ai-gear"></i>
-          <p>Settings</p>
+          <p>Configuración</p>
         </button>
       </nav>
     </aside>

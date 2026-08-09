@@ -1,15 +1,16 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sidebars</title>
+    <title>Barra Lateral VII — Redimensionable con Arrastre</title>
     <link rel="stylesheet" href="styles.css" />
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -24,71 +25,71 @@
   </head>
   <body>
     <aside class="sidebar">
-      <div class="handle"></div>
+      <div class="handle" title="Arrastra para cambiar el tamaño"></div>
       <div class="sidebar-inner">
         <header>
-          <img class="logo-icon" src="logo-icon.svg" />
-          <img class="logo-text" src="logo-text.svg" />
+          <img class="logo-icon" src="logo-icon.svg" alt="Icono del logo" />
+          <img class="logo-text" src="logo-text.svg" alt="Texto del logo" />
         </header>
         <ul>
           <li>
-            <button type="button" onclick="gotoPage(this)">
+            <button type="button" class="nav-item active">
               <i class="ai-dashboard"></i>
-              <p>Dashboard</p>
+              <p>Panel Principal</p>
             </button>
           </li>
           <li>
-            <button type="button" onclick="gotoPage(this)">
+            <button type="button" class="nav-item">
               <i class="ai-grid"></i>
-              <p>Apps</p>
+              <p>Aplicaciones</p>
             </button>
           </li>
           <li>
-            <button type="button" onclick="openSubmenu(this)">
+            <button type="button" class="nav-item">
               <i class="ai-folder"></i>
-              <p>Files</p>
+              <p>Archivos</p>
             </button>
           </li>
           <li>
-            <button type="button" onclick="openSubmenu(this)">
+            <button type="button" class="nav-item">
               <i class="ai-lock-on"></i>
-              <p>Accounts</p>
+              <p>Cuentas</p>
             </button>
           </li>
           <li>
-            <button type="button" onclick="openSubmenu(this)">
+            <button type="button" class="nav-item">
               <i class="ai-person"></i>
-              <p>Users</p>
+              <p>Usuarios</p>
             </button>
           </li>
           <li>
-            <button type="button" onclick="openSubmenu(this)">
+            <button type="button" class="nav-item">
               <i class="ai-location"></i>
-              <p>Locations</p>
+              <p>Ubicaciones</p>
             </button>
           </li>
           <li>
-            <button type="button" onclick="gotoPage(this)">
+            <button type="button" class="nav-item">
               <i class="ai-bell"></i>
-              <p>Notifications</p>
+              <p>Notificaciones</p>
             </button>
           </li>
           <li>
-            <button type="button" onclick="gotoPage(this)">
+            <button type="button" class="nav-item">
               <i class="ai-cart"></i>
-              <p>Products</p>
+              <p>Productos</p>
             </button>
           </li>
           <li>
-            <button type="button" onclick="gotoPage(this)">
+            <button type="button" class="nav-item">
               <i class="ai-triangle-alert"></i>
-              <p>Warnings</p>
+              <p>Advertencias</p>
             </button>
           </li>
           <li>
-            <button type="button" onclick="gotoPage(this)">
+            <button type="button" class="nav-item">
               <i class="ai-gear"></i>
-              <p>Settings</p>
+              <p>Configuración</p>
             </button>
           </li>
         </ul>

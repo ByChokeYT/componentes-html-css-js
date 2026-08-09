@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (filtered.length === 0) {
       gridContainer.innerHTML = `
         <div class="empty-state">
-          <div class="empty-icon">🔍</div>
+          <div class="empty-icon"><i class="bx bx-search-alt-2"></i></div>
           <h3>No se encontraron componentes</h3>
           <p>Intenta con otra búsqueda o selecciona una categoría diferente.</p>
         </div>
@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="dot-yellow"></span>
               <span class="dot-green"></span>
             </div>
-            <div class="mockup-address">${item.path}</div>
+            <div class="mockup-address"><i class="bx bx-file"></i> ${item.path}</div>
           </div>
 
           <!-- Preview Frame -->
@@ -249,8 +249,8 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
 
             <div class="card-footer">
-              <button type="button" class="path-btn copy-path-btn" data-path="${item.path}" title="Copiar ruta de la carpeta">
-                📋 <span>${item.path}</span>
+              <button type="button" class="path-btn copy-path-btn" data-path="${item.path}" title="Copiar ruta del componente">
+                <i class="bx bx-folder-open"></i> <span>${item.path}</span> <i class="bx bx-copy copy-icon"></i>
               </button>
               <a href="${item.path}" target="_blank" class="icon-link" title="Abrir en pestaña nueva">
                 <i class="bx bx-export"></i>
@@ -347,11 +347,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const fullPath = `${dir}/${file}`;
 
+    // 1. Check in-memory cache
     if (loadedCodeCache[fullPath]) {
       codeDisplay.textContent = loadedCodeCache[fullPath];
       return;
     }
 
+    // 2. Check bundled window.COMPONENTS_CODE (works offline & file:// protocol without web server)
+    if (window.COMPONENTS_CODE && window.COMPONENTS_CODE[fullPath]) {
+      const bundledCode = window.COMPONENTS_CODE[fullPath];
+      loadedCodeCache[fullPath] = bundledCode;
+      codeDisplay.textContent = bundledCode;
+      return;
+    }
+
+    // 3. Fallback to fetch API
     codeDisplay.textContent = `Cargando ${file}...`;
 
     fetch(fullPath)

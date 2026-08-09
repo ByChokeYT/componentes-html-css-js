@@ -1,63 +1,101 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sidebars</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Barra Lateral V — BOLT UI Desplegable & Atajos</title>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700&family=Fira+Code:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0"
     />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <aside class="sidebar">
-      <button class="toggle" type="button" onclick="toggleOpen()">
+    <aside class="sidebar" id="sidebar">
+      <!-- Botón de Alternar Expansión -->
+      <button class="toggle" type="button" onclick="toggleOpen()" title="Alternar menú (Atajo: Ctrl + /)">
         <span class="material-symbols-outlined">chevron_right</span>
       </button>
+
       <div class="inner">
-        <div class="header">
-          <img src="logo.svg" class="logo" />
-          <h1>BOLT UI</h1>
-        </div>
+        <!-- Encabezado con Logo y Marca -->
+        <header class="header">
+          <img src="logo.svg" class="logo" alt="Logo de BOLT UI" />
+          <div class="brand-title-box">
+            <h1>BOLT UI</h1>
+            <span class="kbd-hint">Ctrl + /</span>
+          </div>
+        </header>
+
+        <!-- Campo de Búsqueda Dinámica con KBD Shortcut -->
         <div class="search">
           <span class="material-symbols-outlined">search</span>
-          <input type="text" placeholder="Search" />
+          <input type="text" id="menu-search-input" placeholder="Buscar opción..." aria-label="Buscar en el menú" />
+          <span class="search-kbd">⌘F</span>
         </div>
-        <nav class="menu">
-          <button type="button">
-            <span class="material-symbols-outlined">dashboard</span>
-            <p>Dashboard</p>
+
+        <!-- Menú Principal con Grupos de Secciones e Indicador Deslizante -->
+        <div class="menu-container">
+          <span class="section-label">PRINCIPAL</span>
+          <nav class="menu" id="sidebar-menu">
+            <button type="button" class="menu-btn active" data-tooltip="Panel Principal">
+              <span class="material-symbols-outlined">dashboard</span>
+              <p>Panel Principal</p>
+            </button>
+            <button type="button" class="menu-btn" data-tooltip="Clasificación">
+              <span class="material-symbols-outlined">leaderboard</span>
+              <p>Clasificación</p>
+            </button>
+            <button type="button" class="menu-btn" data-tooltip="Monitoreo">
+              <span class="material-symbols-outlined">monitoring</span>
+              <p>Monitoreo</p>
+            </button>
+            <button type="button" class="menu-btn" data-tooltip="Analítica">
+              <span class="material-symbols-outlined">analytics</span>
+              <p>Analítica</p>
+            </button>
+            <button type="button" class="menu-btn" data-tooltip="Mensajes (4)">
+              <span class="material-symbols-outlined">message</span>
+              <p>Mensajes</p>
+              <span class="badge-dot pulse">4</span>
+            </button>
+            <button type="button" class="menu-btn" data-tooltip="Configuración">
+              <span class="material-symbols-outlined">settings</span>
+              <p>Configuración</p>
+            </button>
+          </nav>
+        </div>
+
+        <!-- Perfil de Usuario en el Pie del Menú con Botón de Modo Oscuro/Claro -->
+        <footer class="user-footer">
+          <div class="avatar-box">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Avatar" />
+            <span class="online-status"></span>
+          </div>
+          <div class="user-info">
+            <strong class="user-name">Sofía Rodríguez</strong>
+            <span class="user-role">Ingeniera Lead</span>
+          </div>
+          <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" title="Alternar Modo Oscuro / Claro">
+            <span class="material-symbols-outlined">dark_mode</span>
           </button>
-          <button type="button">
-            <span class="material-symbols-outlined">leaderboard</span>
-            <p>Leaderboard</p>
-          </button>
-          <button type="button">
-            <span class="material-symbols-outlined">monitoring</span>
-            <p>Monitoring</p>
-          </button>
-          <button type="button">
-            <span class="material-symbols-outlined">analytics</span>
-            <p>Analytics</p>
-          </button>
-          <button type="button">
-            <span class="material-symbols-outlined">message</span>
-            <p>Message</p>
-          </button>
-          <button type="button">
-            <span class="material-symbols-outlined">settings</span>
-            <p>Settings</p>
-          </button>
-        </nav>
+        </footer>
       </div>
     </aside>
+
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>

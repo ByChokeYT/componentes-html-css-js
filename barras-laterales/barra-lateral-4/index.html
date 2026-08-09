@@ -1,84 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sidebars</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Barra Lateral IV — Panel Dual Interactivo & Temas</title>
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,0"
-    />
+
+    <!-- Iconos Vectoriales Boxicons & Akar -->
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
     <script src="https://unpkg.com/akar-icons-fonts"></script>
+
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
+      <!-- Columna Izquierda: Accesos Rápidos con Tooltips & Insignias -->
       <div class="left">
-        <img src="avatar.png" />
-        <button>
+        <div class="avatar-wrapper" data-tooltip="Sofía Rodríguez (En Línea)">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Avatar de usuario" />
+          <span class="status-dot"></span>
+        </div>
+        <button type="button" class="nav-icon-btn active" data-tooltip="Inicio">
           <i class="ai-home-alt1"></i>
         </button>
-        <button>
+        <button type="button" class="nav-icon-btn" data-tooltip="Mensajes (5)">
           <i class="ai-chat-dots"></i>
+          <span class="icon-badge">5</span>
         </button>
-        <button>
+        <button type="button" class="nav-icon-btn" data-tooltip="Ajustes">
           <i class="ai-gear"></i>
         </button>
-        <button>
+        <button type="button" class="nav-icon-btn exit-btn" data-tooltip="Cerrar Sesión">
           <i class="ai-link-out"></i>
         </button>
       </div>
+
+      <!-- Columna Derecha: Panel Extendido en Hover con Buscador y Selector de Colores -->
       <div class="right">
-        <h1>Datalens</h1>
-        <nav class="buttons">
-          <button>
-            <i class="ai-dashboard"></i>
-            <span>Boards</span>
-          </button>
-          <button>
-            <i class="ai-people-multiple"></i>
-            <span>Teams</span>
-          </button>
-          <button>
-            <i class="ai-credit-card"></i>
-            <span>Billing</span>
-          </button>
-          <button>
-            <i class="ai-calendar"></i>
-            <span>Events</span>
-          </button>
-          <button>
-            <i class="ai-check-box"></i>
-            <span>Tasks</span>
-          </button>
-          <button>
-            <i class="ai-settings-vertical"></i>
-            <span>Config</span>
-          </button>
-        </nav>
-        <h2>Statistics</h2>
-        <nav class="buttons">
-          <button>
-            <i class="ai-triangle-alert"></i>
-            <span>Alerts</span>
-          </button>
-          <button>
-            <i class="ai-statistic-up"></i>
-            <span>Trends</span>
-          </button>
-        </nav>
+        <header class="brand-header">
+          <div class="brand-title">
+            <h1>Datalens</h1>
+            <span class="badge-pro">PRO v2.5</span>
+          </div>
+        </header>
+
+        <!-- Buscador Filtro Rápido -->
+        <div class="sidebar-search">
+          <i class="bx bx-search"></i>
+          <input type="text" id="panel-search" placeholder="Filtrar opciones..." />
+        </div>
+
+        <!-- Secciones de Botones Grid -->
+        <div class="scroll-area">
+          <nav class="buttons" id="main-grid-buttons">
+            <button type="button" class="grid-nav-btn active" data-name="paneles">
+              <i class="ai-dashboard"></i>
+              <span>Paneles</span>
+            </button>
+            <button type="button" class="grid-nav-btn" data-name="equipos">
+              <i class="ai-people-multiple"></i>
+              <span>Equipos</span>
+            </button>
+            <button type="button" class="grid-nav-btn" data-name="facturacion">
+              <i class="ai-credit-card"></i>
+              <span>Facturación</span>
+            </button>
+            <button type="button" class="grid-nav-btn" data-name="eventos">
+              <i class="ai-calendar"></i>
+              <span>Eventos</span>
+            </button>
+            <button type="button" class="grid-nav-btn" data-name="tareas">
+              <i class="ai-check-box"></i>
+              <span>Tareas</span>
+            </button>
+            <button type="button" class="grid-nav-btn" data-name="ajustes">
+              <i class="ai-settings-vertical"></i>
+              <span>Ajustes</span>
+            </button>
+          </nav>
+
+          <h2>Estadísticas & Métrica</h2>
+          <nav class="buttons" id="stats-grid-buttons">
+            <button type="button" class="grid-nav-btn" data-name="alertas">
+              <i class="ai-triangle-alert"></i>
+              <span>Alertas</span>
+              <span class="count-pill alert">3</span>
+            </button>
+            <button type="button" class="grid-nav-btn" data-name="tendencias">
+              <i class="ai-statistic-up"></i>
+              <span>Tendencias</span>
+            </button>
+          </nav>
+        </div>
+
+        <!-- Selector de Color de Acento (Tema) -->
+        <footer class="theme-footer">
+          <span class="theme-label">Color de Acento</span>
+          <div class="color-picker">
+            <button type="button" class="color-dot active" data-color="#6366f1" style="background: #6366f1" title="Índigo"></button>
+            <button type="button" class="color-dot" data-color="#10b981" style="background: #10b981" title="Esmeralda"></button>
+            <button type="button" class="color-dot" data-color="#ec4899" style="background: #ec4899" title="Rosa Neón"></button>
+            <button type="button" class="color-dot" data-color="#f59e0b" style="background: #f59e0b" title="Ámbar"></button>
+          </div>
+        </footer>
       </div>
     </aside>
+
+    <script src="main.js"></script>
   </body>
 </html>
