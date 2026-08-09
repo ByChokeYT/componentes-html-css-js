@@ -1,70 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sidebars</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Barra Lateral 2 — Glassmorphism Floating Sidebar</title>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,0"
-    />
+
+    <!-- Iconos Vectoriales Boxicons -->
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <script src="https://unpkg.com/akar-icons-fonts"></script>
+
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <aside class="sidebar">
-      <header>
+    <!-- Ambient Background Glow Effects -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+
+    <aside class="sidebar" id="sidebar" role="navigation" aria-label="Navegación principal">
+      <!-- Header de la Barra Lateral -->
+      <header class="sidebar-header">
         <button
           type="button"
-          className="sidebar-burger"
-          onClick="toggleSidebar()"
+          class="sidebar-burger"
+          id="toggleBtn"
+          aria-label="Alternar menú lateral"
+          aria-expanded="true"
+          title="Colapsar / Expandir menú"
         >
-          <i class="ai-three-line-horizontal"></i>
+          <i class="bx bx-menu-alt-left"></i>
         </button>
-        <img src="logo.svg" />
+        <div class="logo-wrapper">
+          <img src="logo.svg" alt="Logo de la marca" class="logo-img" />
+        </div>
       </header>
-      <nav class="menu">
-        <button type="button">
-          <i class="ai-home-alt1"></i>
-          <p>Home</p>
+
+      <!-- Buscador Rápido -->
+      <div class="search-box">
+        <i class="bx bx-search search-icon"></i>
+        <input type="text" placeholder="Buscar..." aria-label="Buscar" />
+        <span class="shortcut">⌘K</span>
+      </div>
+
+      <!-- Menú Navegables -->
+      <div class="sidebar-nav-container">
+        <!-- Grupo 1: Menú Principal -->
+        <div class="menu-group">
+          <span class="group-title">MENÚ PRINCIPAL</span>
+          <nav class="menu">
+            <button type="button" class="nav-item active" data-tooltip="Inicio">
+              <i class="bx bx-home-alt-2"></i>
+              <span class="nav-text">Inicio</span>
+            </button>
+            <button type="button" class="nav-item" data-tooltip="Estadísticas">
+              <i class="bx bx-bar-chart-alt-2"></i>
+              <span class="nav-text">Estadísticas</span>
+            </button>
+            <button type="button" class="nav-item" data-tooltip="Bandeja de Entrada">
+              <i class="bx bx-envelope"></i>
+              <span class="nav-text">Bandeja de Entrada</span>
+              <span class="badge badge-purple">8</span>
+            </button>
+            <button type="button" class="nav-item" data-tooltip="Productos">
+              <i class="bx bx-package"></i>
+              <span class="nav-text">Productos</span>
+            </button>
+          </nav>
+        </div>
+
+        <!-- Grupo 2: Analítica y Crecimiento -->
+        <div class="menu-group">
+          <span class="group-title">ANALÍTICA</span>
+          <nav class="menu">
+            <button type="button" class="nav-item" data-tooltip="Tendencias">
+              <i class="bx bx-trending-up"></i>
+              <span class="nav-text">Tendencias</span>
+              <span class="badge badge-glow">PRO</span>
+            </button>
+            <button type="button" class="nav-item" data-tooltip="Valoraciones">
+              <i class="bx bx-star"></i>
+              <span class="nav-text">Valoraciones</span>
+            </button>
+          </nav>
+        </div>
+
+        <!-- Grupo 3: Sistema y Configuración -->
+        <div class="menu-group">
+          <span class="group-title">SISTEMA</span>
+          <nav class="menu">
+            <button type="button" class="nav-item" data-tooltip="Ajustes">
+              <i class="bx bx-slider-alt"></i>
+              <span class="nav-text">Ajustes</span>
+            </button>
+            <button type="button" class="nav-item" data-tooltip="Seguridad">
+              <i class="bx bx-shield-quarter"></i>
+              <span class="nav-text">Seguridad</span>
+            </button>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Pie de página con Perfil de Usuario -->
+      <footer class="sidebar-footer">
+        <div class="user-profile">
+          <div class="avatar-container">
+            <img
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
+              alt="Avatar de Elena Rostova"
+              class="avatar-img"
+            />
+            <span class="status-dot" title="En línea"></span>
+          </div>
+          <div class="user-info">
+            <span class="user-name">Elena Rostova</span>
+            <span class="user-role">Diseñadora UX/UI</span>
+          </div>
+        </div>
+        <button
+          type="button"
+          class="logout-btn"
+          title="Cerrar sesión"
+          aria-label="Cerrar sesión"
+        >
+          <i class="bx bx-log-out"></i>
         </button>
-        <button type="button">
-          <i class="ai-eye-open"></i>
-          <p>Overview</p>
-        </button>
-        <button type="button">
-          <i class="ai-star"></i>
-          <p>Ratings</p>
-        </button>
-        <button type="button">
-          <i class="ai-shipping-box-v1"></i>
-          <p>Products</p>
-        </button>
-        <button type="button">
-          <i class="ai-arrow-up-right"></i>
-          <p>Trends</p>
-        </button>
-        <button type="button">
-          <i class="ai-envelope"></i>
-          <p>Inbox</p>
-        </button>
-        <button type="button">
-          <i class="ai-gear"></i>
-          <p>Settings</p>
-        </button>
-      </nav>
+      </footer>
     </aside>
+
+    <!-- Área de contenido principal para la vista previa -->
+    <main class="main-content">
+      <header class="content-header">
+        <h1>Bienvenida de nuevo, Elena 👋</h1>
+        <p>Menú flotante interactivo con diseño glassmorphic de alta fidelidad.</p>
+      </header>
+    </main>
+
     <script src="main.js"></script>
   </body>
 </html>

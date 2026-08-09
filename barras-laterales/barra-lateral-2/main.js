@@ -1,17 +1,37 @@
-const sidebar = document.querySelector(".sidebar");
+document.addEventListener("DOMContentLoaded", () => {
+  const sidebar = document.getElementById("sidebar");
+  const toggleBtn = document.getElementById("toggleBtn");
+  const navItems = document.querySelectorAll(".nav-item");
 
-const toggleOpen = () => sidebar.classList.toggle("open");
+  // Alternar estado de expansión/colapso de la barra lateral
+  if (toggleBtn && sidebar) {
+    toggleBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("collapsed");
+      const isCollapsed = sidebar.classList.contains("collapsed");
+      toggleBtn.setAttribute("aria-expanded", !isCollapsed);
+    });
+  }
 
-const nav = document.querySelector(".sidebar nav");
+  // Manejar el estado activo de los botones del menú
+  navItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      navItems.forEach((btn) => btn.classList.remove("active"));
+      item.classList.add("active");
+    });
+  });
 
-const buttons = document.querySelectorAll(".sidebar nav button");
-
-buttons[0].classList.add("active");
-
-buttons.forEach((button, index) =>
-  button.addEventListener("click", () => {
-    buttons.forEach((b) => b.classList.remove("active"));
-    button.classList.add("active");
-    nav.style.setProperty("--top", `${index === 0 ? 0 : index * 56}px`);
-  })
-);
+  // Atajo de teclado (Ctrl/Cmd + K para enfocar la caja de búsqueda)
+  document.addEventListener("keydown", (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+      e.preventDefault();
+      const searchInput = document.querySelector(".search-box input");
+      if (searchInput) {
+        if (sidebar && sidebar.classList.contains("collapsed")) {
+          sidebar.classList.remove("collapsed");
+          if (toggleBtn) toggleBtn.setAttribute("aria-expanded", "true");
+        }
+        searchInput.focus();
+      }
+    }
+  });
+});

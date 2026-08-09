@@ -45,8 +45,8 @@ El repositorio cuenta con **37 componentes** organizados en 13 categorías:
 
 1. **Clona el repositorio:**
    ```bash
-   git clone https://github.com/tuusuario/componentes-html-css-javascript.git
-   cd componentes-html-css-javascript
+   git clone https://github.com/ByChokeYT/componentes-html-css-js.git
+   cd componentes-html-css-js
    ```
 
 2. **Abre el Showcase:**
@@ -55,7 +55,7 @@ El repositorio cuenta con **37 componentes** organizados en 13 categorías:
 3. **Despliegue en GitHub Pages (Opcional):**
    - Ve a **Settings > Pages** en tu repositorio de GitHub.
    - En **Branch**, selecciona `main` y guarda.
-   - Tu catálogo estará disponible públicamente en `https://tuusuario.github.io/componentes-html-css-js/`.
+   - Tu catálogo estará disponible públicamente en `https://bychokeyt.github.io/componentes-html-css-js/`.
 
 ---
 

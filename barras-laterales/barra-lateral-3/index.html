@@ -1,119 +1,313 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sidebars</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Barra Lateral 3 — Menú Acordeón Pro Glassmorphic</title>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,0"
-    />
+
+    <!-- Iconos Vectoriales Boxicons -->
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <script src="https://unpkg.com/akar-icons-fonts"></script>
+
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <aside class="sidebar">
-      <header>
-        <img src="logo.svg" />
+    <!-- Efectos Ambientales de Luz -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+
+    <aside
+      class="sidebar"
+      id="sidebar"
+      role="navigation"
+      aria-label="Navegación principal"
+    >
+      <!-- Header con Botón Burger y Logo -->
+      <header class="sidebar-header">
+        <button
+          type="button"
+          class="sidebar-burger"
+          id="toggleBtn"
+          aria-label="Alternar menú lateral"
+          aria-expanded="true"
+          title="Colapsar / Expandir menú"
+        >
+          <i class="bx bx-menu-alt-left"></i>
+        </button>
+        <div class="logo-wrapper">
+          <img src="logo.svg" alt="Logo de la marca" class="logo-img" />
+        </div>
       </header>
-      <ul>
-        <li>
-          <button type="button" onclick="gotoPage(this)" class="active">
-            <i class="ai-dashboard"></i>
-            <p>Dashboard</p>
-          </button>
-        </li>
-        <li>
-          <button type="button" onclick="openSubmenu(this)">
-            <i class="ai-folder-add"></i>
-            <p>Create</p>
-            <i class="ai-chevron-down-small"></i>
-          </button>
-          <div class="sub-menu">
-            <ul>
-              <li>
-                <button type="button">Article</button>
-              </li>
-              <li>
-                <button type="button">Document</button>
-              </li>
-              <li>
-                <button type="button">Slides</button>
-              </li>
-            </ul>
+
+      <!-- Buscador Rápido -->
+      <div class="search-box">
+        <i class="bx bx-search search-icon"></i>
+        <input type="text" placeholder="Buscar..." aria-label="Buscar" />
+        <span class="shortcut">⌘K</span>
+      </div>
+
+      <!-- Menú de Navegación Estilo Acordeón -->
+      <div class="sidebar-nav-container">
+        <ul class="menu-list">
+          <!-- 1. Panel Principal -->
+          <li class="menu-item">
+            <button
+              type="button"
+              class="nav-btn active"
+              onclick="gotoPage(this)"
+              data-tooltip="Panel Principal"
+            >
+              <i class="bx bx-grid-alt nav-icon"></i>
+              <span class="nav-text">Panel Principal</span>
+            </button>
+          </li>
+
+          <!-- 2. Crear Nuevo (Acordeón) -->
+          <li class="menu-item">
+            <button
+              type="button"
+              class="nav-btn has-submenu"
+              onclick="toggleSubmenu(this)"
+              data-tooltip="Crear Nuevo"
+            >
+              <i class="bx bx-plus-circle nav-icon"></i>
+              <span class="nav-text">Crear Nuevo</span>
+              <i class="bx bx-chevron-down chevron-icon"></i>
+            </button>
+            <div class="sub-menu">
+              <ul class="sub-menu-list">
+                <li>
+                  <button
+                    type="button"
+                    class="sub-nav-btn"
+                    onclick="selectSubItem(this)"
+                  >
+                    <i class="bx bx-file"></i>
+                    <span>Artículo</span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    class="sub-nav-btn"
+                    onclick="selectSubItem(this)"
+                  >
+                    <i class="bx bx-folder"></i>
+                    <span>Documento</span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    class="sub-nav-btn"
+                    onclick="selectSubItem(this)"
+                  >
+                    <i class="bx bx-slideshow"></i>
+                    <span>Presentación</span>
+                    <span class="badge badge-sub">Nuevo</span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    class="sub-nav-btn"
+                    onclick="selectSubItem(this)"
+                  >
+                    <i class="bx bx-file-blank"></i>
+                    <span>Reporte PDF</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <!-- 3. Cuenta y Seguridad (Acordeón) -->
+          <li class="menu-item">
+            <button
+              type="button"
+              class="nav-btn has-submenu"
+              onclick="toggleSubmenu(this)"
+              data-tooltip="Cuenta y Seguridad"
+            >
+              <i class="bx bx-shield-quarter nav-icon"></i>
+              <span class="nav-text">Cuenta y Seguridad</span>
+              <i class="bx bx-chevron-down chevron-icon"></i>
+            </button>
+            <div class="sub-menu">
+              <ul class="sub-menu-list">
+                <li>
+                  <button
+                    type="button"
+                    class="sub-nav-btn"
+                    onclick="selectSubItem(this)"
+                  >
+                    <i class="bx bx-user-voice"></i>
+                    <span>Administración</span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    class="sub-nav-btn"
+                    onclick="selectSubItem(this)"
+                  >
+                    <i class="bx bx-desktop"></i>
+                    <span>Pantalla y Tema</span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    class="sub-nav-btn"
+                    onclick="selectSubItem(this)"
+                  >
+                    <i class="bx bx-lock-alt"></i>
+                    <span>Seguridad 2FA</span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    class="sub-nav-btn"
+                    onclick="selectSubItem(this)"
+                  >
+                    <i class="bx bx-slider"></i>
+                    <span>Preferencias</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <!-- 4. Perfil de Usuario (Acordeón) -->
+          <li class="menu-item">
+            <button
+              type="button"
+              class="nav-btn has-submenu"
+              onclick="toggleSubmenu(this)"
+              data-tooltip="Perfil"
+            >
+              <i class="bx bx-user nav-icon"></i>
+              <span class="nav-text">Perfil</span>
+              <i class="bx bx-chevron-down chevron-icon"></i>
+            </button>
+            <div class="sub-menu">
+              <ul class="sub-menu-list">
+                <li>
+                  <button
+                    type="button"
+                    class="sub-nav-btn"
+                    onclick="selectSubItem(this)"
+                  >
+                    <i class="bx bx-image"></i>
+                    <span>Foto de Perfil</span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    class="sub-nav-btn"
+                    onclick="selectSubItem(this)"
+                  >
+                    <i class="bx bx-palette"></i>
+                    <span>Tema Visual</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <!-- 5. Notificaciones -->
+          <li class="menu-item">
+            <button
+              type="button"
+              class="nav-btn"
+              onclick="gotoPage(this)"
+              data-tooltip="Notificaciones"
+            >
+              <i class="bx bx-bell nav-icon"></i>
+              <span class="nav-text">Notificaciones</span>
+              <span class="badge badge-purple">5</span>
+            </button>
+          </li>
+
+          <!-- 6. Productos -->
+          <li class="menu-item">
+            <button
+              type="button"
+              class="nav-btn"
+              onclick="gotoPage(this)"
+              data-tooltip="Productos"
+            >
+              <i class="bx bx-package nav-icon"></i>
+              <span class="nav-text">Productos</span>
+            </button>
+          </li>
+
+          <!-- 7. Configuración -->
+          <li class="menu-item">
+            <button
+              type="button"
+              class="nav-btn"
+              onclick="gotoPage(this)"
+              data-tooltip="Configuración"
+            >
+              <i class="bx bx-cog nav-icon"></i>
+              <span class="nav-text">Configuración</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Footer con Perfil de Usuario -->
+      <footer class="sidebar-footer">
+        <div class="user-profile">
+          <div class="avatar-container">
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80"
+              alt="Avatar de Carlos Mendoza"
+              class="avatar-img"
+            />
+            <span class="status-dot" title="En línea"></span>
           </div>
-        </li>
-        <li>
-          <button type="button" onclick="openSubmenu(this)">
-            <i class="ai-lock-on"></i>
-            <p>Account</p>
-            <i class="ai-chevron-down-small"></i>
-          </button>
-          <div class="sub-menu">
-            <ul>
-              <li>
-                <button type="button">Admin</button>
-              </li>
-              <li>
-                <button type="button">Display</button>
-              </li>
-              <li>
-                <button type="button">Appearance</button>
-              </li>
-              <li>
-                <button type="button">Preferences</button>
-              </li>
-            </ul>
+          <div class="user-info">
+            <span class="user-name">Carlos Mendoza</span>
+            <span class="user-role">Administrador Pro</span>
           </div>
-        </li>
-        <li>
-          <button type="button" onclick="openSubmenu(this)">
-            <i class="ai-person"></i>
-            <p>Profile</p>
-            <i class="ai-chevron-down-small"></i>
-          </button>
-          <div class="sub-menu">
-            <ul>
-              <li>
-                <button type="button">Avatar</button>
-              </li>
-              <li>
-                <button type="button">Theme</button>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li>
-          <button type="button" onclick="gotoPage(this)">
-            <i class="ai-bell"></i>
-            <p>Notifications</p>
-          </button>
-        </li>
-        <li>
-          <button type="button" onclick="gotoPage(this)">
-            <i class="ai-cart"></i>
-            <p>Products</p>
-          </button>
-        </li>
-        <li>
-          <button type="button" onclick="gotoPage(this)">
-            <i class="ai-gear"></i>
-            <p>Settings</p>
-          </button>
-        </li>
-      </ul>
+        </div>
+        <button
+          type="button"
+          class="logout-btn"
+          title="Cerrar sesión"
+          aria-label="Cerrar sesión"
+        >
+          <i class="bx bx-log-out"></i>
+        </button>
+      </footer>
     </aside>
-    <script type="text/javascript" src="main.js"></script>
+
+    <!-- Área de contenido principal de demostración -->
+    <main class="main-content">
+      <header class="content-header">
+        <h1>Bienvenido de nuevo, Carlos 👋</h1>
+        <p>
+          Menú desplegable tipo acordeón con arquitectura glassmorphic de última
+          generación.
+        </p>
+      </header>
+    </main>
+
+    <script src="main.js"></script>
   </body>
 </html>
