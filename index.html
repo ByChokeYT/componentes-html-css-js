@@ -1,190 +1,358 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JS Components — Biblioteca de Componentes Web Vanilla UI</title>
   
-  <!-- Google Fonts -->
+  <!-- Primary SEO Meta Tags -->
+  <title>UI Components Hub — 110 Componentes Web Vanilla (HTML5, CSS3 y JavaScript)</title>
+  <meta name="title" content="UI Components Hub — 110 Componentes Web Vanilla (HTML5, CSS3 y JavaScript)" />
+  <meta name="description" content="Colección completa, modular y 100% Vanilla de 110 componentes UI creados en HTML5, CSS3 y JavaScript: logins, sidebars, navbars, carruseles, tablas y animaciones GSAP. Previsualización responsiva, descarga en ZIP e inspección de código fuente." />
+  <meta name="keywords" content="componentes web, vanilla js, html5, css3, ui components, biblioteca ui, login responsive, navbar css, sidebar vanilla, carrusel 3d, modales html, botones animados, pure css, frontend components, plantillas web, web design" />
+  <meta name="author" content="ByChokeYT" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="theme-color" content="#09090b" />
+  <link rel="canonical" href="https://bychokeyt.github.io/componentes-html-css-js/" />
+
+  <!-- SVG Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="alternate icon" href="favicon.svg" type="image/svg+xml" />
+
+  <!-- Open Graph / Facebook / LinkedIn / Discord -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bychokeyt.github.io/componentes-html-css-js/" />
+  <meta property="og:site_name" content="UI Components Hub" />
+  <meta property="og:title" content="UI Components Hub — 110 Componentes Web Vanilla (HTML5, CSS3 y JavaScript)" />
+  <meta property="og:description" content="Explora y descarga 110 componentes UI modulares en HTML5, CSS3 y JavaScript puro sin dependencias. Con previsualización responsiva e inspección de código fuente." />
+  <meta property="og:image" content="https://bychokeyt.github.io/componentes-html-css-js/banner.png" />
+  <meta property="og:image:alt" content="UI Components Hub — Showcase de 110 Componentes Web" />
+  <meta property="og:locale" content="es_ES" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://bychokeyt.github.io/componentes-html-css-js/" />
+  <meta name="twitter:title" content="UI Components Hub — 110 Componentes Web Vanilla UI" />
+  <meta name="twitter:description" content="Colección completa de 110 componentes UI modulares en HTML5, CSS3 y JavaScript puro. Previsualización en vivo, visor de código y descarga en ZIP." />
+  <meta name="twitter:image" content="https://bychokeyt.github.io/componentes-html-css-js/banner.png" />
+  <meta name="twitter:creator" content="@ByChokeYT" />
+
+  <!-- Schema.org JSON-LD Structured Data for Rich Search Results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://bychokeyt.github.io/componentes-html-css-js/#webapp",
+        "name": "UI Components Hub",
+        "url": "https://bychokeyt.github.io/componentes-html-css-js/",
+        "description": "Biblioteca web interactiva con 110 componentes UI modulares construidos en HTML5, CSS3 y Vanilla JavaScript.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Requires HTML5 support.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "ByChokeYT"
+        }
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://bychokeyt.github.io/componentes-html-css-js/#collection",
+        "name": "110 Componentes Web Vanilla UI",
+        "url": "https://bychokeyt.github.io/componentes-html-css-js/",
+        "description": "Catálogo completo de 110 componentes frontend organizados en 20 categorías.",
+        "numberOfItems": 110,
+        "inLanguage": "es"
+      }
+    ]
+  }
+  </script>
+  
+  <!-- Google Fonts Preconnect & Stylesheet -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
   
   <!-- Boxicons Vector Icons -->
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
+  <!-- Prism.js Syntax Highlighting -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="index.css" />
 </head>
 <body>
 
-  <!-- Ambient Light Blobs -->
-  <div class="ambient-blob blob-1"></div>
-  <div class="ambient-blob blob-2"></div>
-  <div class="ambient-grid"></div>
+  <!-- Minimal Background Pattern -->
+  <div class="bg-pattern" aria-hidden="true"></div>
 
   <!-- Header / Navbar -->
-  <header class="app-header">
+  <header class="app-header" role="banner">
     <div class="header-container">
-      <div class="logo-area">
+      <a href="#" class="logo-area" id="logo-refresh-btn" title="UI Components Hub — Inicio" aria-label="UI Components Hub Inicio">
         <div class="logo-badge">
-          <span>JS</span>
+          <i class="bx bx-layer" aria-hidden="true"></i>
         </div>
         <div class="logo-text">
-          <h1>JS Components</h1>
-          <span class="sub-tag">Biblioteca UI Vanilla</span>
+          <div class="logo-main-title">
+            <span>UI Components <span class="hub-pill">Hub</span></span>
+          </div>
+          <span class="sub-tag-label">110 Componentes Vanilla</span>
         </div>
-      </div>
+      </a>
 
       <!-- Buscador -->
-      <div class="search-box">
-        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <div class="search-box" role="search">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
-        <input type="text" id="search-input" placeholder="Buscar por nombre o categoría (ej: login, sidebar)..." />
-        <span class="search-kbd">⌘K</span>
+        <input type="text" id="search-input" placeholder="Buscar por nombre, categoría o tag (ej: login, sidebar)..." autocomplete="off" aria-label="Buscar componentes UI" />
+        <button type="button" class="search-clear-btn" id="search-clear-btn" title="Limpiar búsqueda" aria-label="Limpiar búsqueda">✕</button>
+        <span class="search-kbd" aria-hidden="true">⌘K</span>
       </div>
 
       <div class="header-actions">
+        <!-- Favorites Filter Button -->
+        <button type="button" class="header-fav-btn" id="header-fav-btn" title="Ver componentes favoritos" aria-label="Ver componentes favoritos">
+          <i class="bx bxs-star fav-icon" aria-hidden="true"></i> Favoritos <span class="fav-count-badge" id="fav-count-badge">0</span>
+        </button>
+
+        <!-- Shortcuts Help Button -->
+        <button type="button" class="header-icon-btn" id="help-shortcuts-btn" title="Atajos de teclado (?)" aria-label="Abrir guía de atajos de teclado">
+          <i class="bx bx-help-circle" aria-hidden="true"></i>
+        </button>
+
+        <!-- Total Count Badge -->
         <span class="badge-count" id="total-count">
-          <span class="live-dot"></span>
-          <span id="count-number">37</span> Componentes
+          <span class="live-dot" aria-hidden="true"></span>
+          <span id="count-number">110</span>
         </span>
       </div>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero-section">
+  <section class="hero-section" aria-labelledby="hero-main-title">
     <div class="hero-content">
       <div class="hero-pill">
-        <span class="pill-sparkle"><i class="bx bx-terminal"></i></span> 100% Vanilla JS &amp; CSS3 Nativo
+        <i class="bx bx-check-shield" aria-hidden="true"></i> 100% Vanilla Web • Zero Dependencias
       </div>
-      <h2 class="hero-title">
-        Componentes UI Modulares, <br />
-        <span class="gradient-text">Elegantes y Listos para Usar</span>
-      </h2>
+      <h1 class="hero-title" id="hero-main-title">
+        Componentes Frontend <span class="text-accent">HTML, CSS &amp; JavaScript</span>
+      </h1>
       <p class="hero-description">
-        Una colección seleccionada de 37 componentes interactivos optimizados para copiar rápido HTML, CSS y JS e integrarlos en cualquier proyecto.
+        Colección modular de 110 componentes UI listos para copiar, inspeccionar y descargar en ZIP.
       </p>
 
       <!-- Stats Bar -->
       <div class="hero-stats">
-        <div class="stat-item">
-          <span class="stat-num">37</span>
-          <span class="stat-lbl">Componentes UI</span>
+        <div class="stat-item" id="stat-total-btn" style="cursor: pointer;" title="Mostrar todos los componentes" role="button" tabindex="0">
+          <span class="stat-num" id="stat-total-num">110</span>
+          <span class="stat-lbl">Componentes</span>
         </div>
-        <div class="stat-divider"></div>
+        <div class="stat-divider" aria-hidden="true"></div>
         <div class="stat-item">
-          <span class="stat-num">13</span>
+          <span class="stat-num">20</span>
           <span class="stat-lbl">Categorías</span>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-num">1 Click</span>
-          <span class="stat-lbl">Copiado Directo</span>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item" id="stat-js-btn" style="cursor: pointer;" title="Filtrar componentes con JavaScript" role="button" tabindex="0">
+          <span class="stat-num" id="stat-js-num">39</span>
+          <span class="stat-lbl">Con JavaScript</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item" id="stat-css-btn" style="cursor: pointer;" title="Filtrar componentes Pure CSS" role="button" tabindex="0">
+          <span class="stat-num" id="stat-css-num">71</span>
+          <span class="stat-lbl">Pure CSS</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Layout Principal -->
-  <main class="main-layout">
+  <main class="main-layout" role="main">
     
+    <!-- Filtros de Tecnología (Segmented Control) -->
+    <section class="tech-filters-section" aria-label="Filtros por Tecnología">
+      <div class="tech-segment-group" id="tech-segment-group" role="tablist">
+        <button type="button" class="tech-pill active" data-tech="all" role="tab" aria-selected="true">
+          <i class="bx bx-grid-alt" aria-hidden="true"></i> Todos <span class="tech-count" id="tech-all-count">110</span>
+        </button>
+        <button type="button" class="tech-pill" data-tech="js" role="tab" aria-selected="false">
+          <i class="bx bxl-javascript" aria-hidden="true"></i> Con JS <span class="tech-count" id="tech-js-count">39</span>
+        </button>
+        <button type="button" class="tech-pill" data-tech="css" role="tab" aria-selected="false">
+          <i class="bx bxl-css3" aria-hidden="true"></i> Pure CSS <span class="tech-count" id="tech-css-count">71</span>
+        </button>
+        <button type="button" class="tech-pill" data-tech="fav" role="tab" aria-selected="false">
+          <i class="bx bxs-star" aria-hidden="true"></i> Favoritos <span class="tech-count" id="tech-fav-count">0</span>
+        </button>
+      </div>
+    </section>
+
     <!-- Guía de Iconos de Referencia Rápida -->
-    <section class="icon-legend-section">
+    <section class="icon-legend-section" aria-labelledby="legend-section-title">
       <div class="legend-header">
         <div class="legend-title">
-          <i class="bx bx-category-alt icon-main"></i>
-          <h3>Iconos de Referencia & Categorías UI</h3>
+          <i class="bx bx-category-alt icon-main" aria-hidden="true"></i>
+          <h2 id="legend-section-title">Categorías UI (20)</h2>
         </div>
-        <span class="legend-subtitle">Haz clic en cualquier icono para filtrar los componentes al instante</span>
+        <div class="legend-actions">
+          <span class="legend-subtitle">Selecciona una categoría para filtrar</span>
+          <button type="button" class="legend-toggle-btn" id="legend-toggle-btn" title="Expandir/Contraer categorías" aria-label="Contraer o expandir categorías">
+            <i class="bx bx-chevron-up" id="legend-toggle-icon" aria-hidden="true"></i>
+          </button>
+        </div>
       </div>
       <div class="legend-grid" id="icon-legend-grid">
         <!-- Generado dinámicamente con JS -->
       </div>
     </section>
 
-    <!-- Barra de Filtros por Categoría -->
-    <nav class="category-filters-wrapper">
-      <div class="category-filters" id="category-filters">
-        <!-- Generado dinámicamente con JS -->
+    <!-- Barra de Filtros por Categoría & Toolbar de Controles -->
+    <section class="toolbar-section" aria-label="Barra de herramientas y filtros">
+      <nav class="category-filters-wrapper" aria-label="Filtros de Categoría">
+        <div class="category-filters" id="category-filters">
+          <!-- Generado dinámicamente con JS -->
+        </div>
+      </nav>
+
+      <!-- Grid Toolbar (Sort & View Switcher) -->
+      <div class="grid-toolbar">
+        <div class="toolbar-left">
+          <span class="results-badge" id="results-badge">Mostrando <strong>110</strong> resultados</span>
+        </div>
+
+        <div class="toolbar-right">
+          <!-- Sorting Select -->
+          <div class="sort-control">
+            <i class="bx bx-sort-alt-2" aria-hidden="true"></i>
+            <label for="sort-select" class="sr-only" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">Ordenar componentes</label>
+            <select id="sort-select" class="sort-select">
+              <option value="default">Orden predeterminado</option>
+              <option value="name-asc">Nombre (A - Z)</option>
+              <option value="name-desc">Nombre (Z - A)</option>
+              <option value="category">Por Categoría</option>
+              <option value="tech-js">Con JavaScript primero</option>
+              <option value="tech-css">Pure CSS primero</option>
+            </select>
+          </div>
+
+          <!-- View Switcher (Grid vs Compact List) -->
+          <div class="view-switcher" role="group" aria-label="Cambiar vista de componentes">
+            <button type="button" class="view-btn active" id="view-grid-btn" data-view="grid" title="Vista en Cuadrícula" aria-label="Vista en cuadrícula">
+              <i class="bx bx-grid-alt" aria-hidden="true"></i>
+            </button>
+            <button type="button" class="view-btn" id="view-list-btn" data-view="list" title="Vista en Lista Compacta" aria-label="Vista en lista compacta">
+              <i class="bx bx-list-ul" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
       </div>
-    </nav>
+    </section>
 
     <!-- Grilla de Componentes -->
-    <section class="grid-container" id="grid-container">
+    <section class="grid-container" id="grid-container" aria-label="Catálogo de Componentes">
       <!-- Generado dinámicamente con JS -->
     </section>
   </main>
 
   <!-- Modal Visor Fullscreen, Code & Responsive -->
-  <div class="modal-backdrop" id="preview-modal">
+  <div class="modal-backdrop" id="preview-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-window">
       <div class="modal-bar">
         <div class="modal-left">
-          <div class="browser-dots">
-            <span class="dot close-dot"></span>
+          <div class="browser-dots" aria-hidden="true">
+            <span class="dot close-dot" id="modal-dot-close" title="Cerrar modal"></span>
             <span class="dot minimize-dot"></span>
-            <span class="dot expand-dot"></span>
+            <span class="dot expand-dot" id="modal-dot-expand" title="Pantalla completa"></span>
           </div>
-          <div class="modal-title" id="modal-title">Vista Previa del Componente</div>
+          <div class="modal-title-box">
+            <h3 class="modal-title" id="modal-title">Vista Previa</h3>
+            <span class="modal-path-chip" id="modal-path-chip"></span>
+          </div>
         </div>
 
         <!-- Mode Toggle: Preview vs Code -->
-        <div class="view-mode-toggle">
-          <button type="button" class="mode-btn active" id="mode-btn-preview">
-            <i class="bx bx-show-alt"></i> Vista Previa
+        <div class="view-mode-toggle" role="tablist">
+          <button type="button" class="mode-btn active" id="mode-btn-preview" role="tab" aria-selected="true">
+            <i class="bx bx-show-alt" aria-hidden="true"></i> Vista Previa
           </button>
-          <button type="button" class="mode-btn" id="mode-btn-code">
-            <i class="bx bx-code-alt"></i> Ver Código
+          <button type="button" class="mode-btn" id="mode-btn-code" role="tab" aria-selected="false">
+            <i class="bx bx-code-alt" aria-hidden="true"></i> Código Fuente
           </button>
         </div>
         
         <!-- Device Switcher (only in preview mode) -->
-        <div class="device-switcher" id="device-switcher">
-          <button type="button" class="device-btn active" data-device="desktop">
-            <i class="bx bx-desktop"></i> Escritorio
+        <div class="device-switcher" id="device-switcher" role="group" aria-label="Modo responsivo">
+          <button type="button" class="device-btn active" data-device="desktop" title="Modo Escritorio (100%)" aria-label="Vista de escritorio">
+            <i class="bx bx-desktop" aria-hidden="true"></i> 100%
           </button>
-          <button type="button" class="device-btn" data-device="tablet">
-            <i class="bx bx-tab"></i> Tablet (768px)
+          <button type="button" class="device-btn" data-device="tablet" title="Modo Tablet (768px)" aria-label="Vista de tablet">
+            <i class="bx bx-tab" aria-hidden="true"></i> Tablet
           </button>
-          <button type="button" class="device-btn" data-device="mobile">
-            <i class="bx bx-mobile-alt"></i> Móvil (375px)
+          <button type="button" class="device-btn" data-device="mobile" title="Modo Móvil (375px)" aria-label="Vista móvil">
+            <i class="bx bx-mobile-alt" aria-hidden="true"></i> Móvil
           </button>
         </div>
 
-        <button type="button" class="close-btn" id="close-modal-btn" title="Cerrar (Esc)">
-          ✕
-        </button>
+        <div class="modal-right-actions">
+          <button type="button" class="modal-icon-btn" id="modal-reload-btn" title="Recargar vista previa" aria-label="Recargar iframe">
+            <i class="bx bx-refresh" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="modal-icon-btn" id="modal-fav-toggle-btn" title="Guardar en favoritos" aria-label="Guardar en favoritos">
+            <i class="bx bx-star" id="modal-fav-icon" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="modal-icon-btn" id="modal-download-zip-btn" title="Descargar componente en ZIP" aria-label="Descargar componente en ZIP">
+            <i class="bx bx-download" aria-hidden="true"></i>
+          </button>
+          <a href="#" id="modal-open-newtab-btn" target="_blank" class="modal-icon-btn" title="Abrir en pestaña nueva" aria-label="Abrir componente en pestaña nueva">
+            <i class="bx bx-export" aria-hidden="true"></i>
+          </a>
+          <button type="button" class="close-btn" id="close-modal-btn" title="Cerrar (Esc)" aria-label="Cerrar ventana modal">
+            ✕
+          </button>
+        </div>
       </div>
       
       <div class="modal-body">
         <!-- Preview Panel -->
         <div class="iframe-wrapper desktop" id="iframe-wrapper">
-          <iframe id="modal-iframe" src="" title="Preview Component"></iframe>
+          <iframe id="modal-iframe" src="" title="Previsualización interactiva del componente"></iframe>
         </div>
 
         <!-- Code Viewer Panel -->
         <div class="code-viewer-panel" id="code-viewer-panel">
           <div class="code-subtabs">
-            <div class="code-tabs-left">
-              <button type="button" class="code-tab active" data-lang="html">
-                <i class="bx bxl-html5"></i> HTML
+            <div class="code-tabs-left" role="tablist">
+              <button type="button" class="code-tab active" data-lang="html" role="tab" aria-selected="true">
+                <i class="bx bxl-html5" style="color: #f97316;" aria-hidden="true"></i> HTML <span class="code-lang-tag" id="html-size-tag"></span>
               </button>
-              <button type="button" class="code-tab" data-lang="css">
-                <i class="bx bxl-css3"></i> CSS
+              <button type="button" class="code-tab" data-lang="css" role="tab" aria-selected="false">
+                <i class="bx bxl-css3" style="color: #38bdf8;" aria-hidden="true"></i> CSS <span class="code-lang-tag" id="css-size-tag"></span>
               </button>
-              <button type="button" class="code-tab" data-lang="js">
-                <i class="bx bxl-javascript"></i> JS
+              <button type="button" class="code-tab" data-lang="js" id="code-tab-js" role="tab" aria-selected="false">
+                <i class="bx bxl-javascript" style="color: #facc15;" aria-hidden="true"></i> JS <span class="code-lang-tag" id="js-size-tag"></span>
               </button>
             </div>
-            <button type="button" class="copy-code-btn" id="copy-code-btn">
-              <i class="bx bx-copy"></i> Copiar Código <span id="copy-lang-label">HTML</span>
-            </button>
+            
+            <div class="code-tabs-right">
+              <button type="button" class="copy-code-btn" id="copy-code-btn" aria-label="Copiar código fuente">
+                <i class="bx bx-copy" aria-hidden="true"></i> Copiar Código <span id="copy-lang-label">HTML</span>
+              </button>
+            </div>
           </div>
-          <div class="code-content-area">
-            <pre><code id="code-display">Cargando código...</code></pre>
+          
+          <div class="code-content-area line-numbers">
+            <pre><code id="code-display" class="language-html">Cargando código...</code></pre>
           </div>
         </div>
 
@@ -192,18 +360,88 @@
     </div>
   </div>
 
+  <!-- Keyboard Shortcuts Help Modal -->
+  <div class="modal-backdrop" id="shortcuts-modal" role="dialog" aria-modal="true" aria-labelledby="shortcuts-heading">
+    <div class="shortcuts-card">
+      <div class="shortcuts-header">
+        <div class="shortcuts-title">
+          <i class="bx bx-keyboard" aria-hidden="true"></i>
+          <h3 id="shortcuts-heading">Atajos de Teclado</h3>
+        </div>
+        <button type="button" class="close-btn" id="close-shortcuts-btn" aria-label="Cerrar modal de atajos">✕</button>
+      </div>
+
+      <div class="shortcuts-grid">
+        <div class="shortcut-row">
+          <span class="shortcut-desc">Buscar componentes</span>
+          <span class="shortcut-key">⌘K / /</span>
+        </div>
+        <div class="shortcut-row">
+          <span class="shortcut-desc">Cerrar modales</span>
+          <span class="shortcut-key">Esc</span>
+        </div>
+        <div class="shortcut-row">
+          <span class="shortcut-desc">Cambiar a Vista Previa</span>
+          <span class="shortcut-key">P</span>
+        </div>
+        <div class="shortcut-row">
+          <span class="shortcut-desc">Cambiar a Ver Código</span>
+          <span class="shortcut-key">C</span>
+        </div>
+        <div class="shortcut-row">
+          <span class="shortcut-desc">Viewport Escritorio / Tablet / Móvil</span>
+          <span class="shortcut-key">1 / 2 / 3</span>
+        </div>
+        <div class="shortcut-row">
+          <span class="shortcut-desc">Filtrar Favoritos</span>
+          <span class="shortcut-key">F</span>
+        </div>
+        <div class="shortcut-row">
+          <span class="shortcut-desc">Abrir esta ventana de ayuda</span>
+          <span class="shortcut-key">?</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Scroll To Top Button -->
+  <button type="button" class="scroll-top-btn" id="scroll-top-btn" title="Volver arriba" aria-label="Volver arriba">
+    <i class="bx bx-chevron-up" aria-hidden="true"></i>
+  </button>
+
   <!-- Toast Notification -->
-  <div class="toast-notification" id="toast">
-    <i class="bx bx-check-circle toast-icon"></i>
+  <div class="toast-notification" id="toast" role="status" aria-live="polite">
+    <i class="bx bx-check-circle toast-icon" id="toast-icon" aria-hidden="true"></i>
     <span class="toast-msg" id="toast-msg">Ruta copiada al portapapeles</span>
   </div>
 
   <!-- Footer -->
-  <footer class="app-footer">
-    <p>JS Components &copy; 2026 — Biblioteca UI de Alto Rendimiento en Vanilla JS y CSS3.</p>
+  <footer class="app-footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="footer-logo">UI Components Hub</span>
+        <p>110 componentes UI modulares en HTML5, CSS3, Vanilla JavaScript y GSAP.</p>
+      </div>
+      <div class="footer-badges">
+        <span class="f-badge"><i class="bx bx-terminal" aria-hidden="true"></i> 100% Vanilla Web</span>
+        <span class="f-badge"><i class="bx bx-download" aria-hidden="true"></i> Descarga ZIP</span>
+        <span class="f-badge"><i class="bx bx-code-block" aria-hidden="true"></i> Zero Dependencies</span>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <p>UI Components Hub &copy; 2026 — Licencia MIT. Desarrollado por ByChokeYT.</p>
+    </div>
   </footer>
 
+  <!-- External CDNs for ZIP download & Syntax Highlighting -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" defer></script>
+
+  <!-- Data & Application Scripts -->
   <script src="code-data.js"></script>
+  <script src="components-data.js"></script>
   <script src="index.js"></script>
 </body>
 </html>

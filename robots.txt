@@ -1,0 +1,5 @@
+# robots.txt para UI Components Hub
+User-agent: *
+Allow: /
+
+Sitemap: https://bychokeyt.github.io/componentes-html-css-js/sitemap.xml
