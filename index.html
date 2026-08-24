@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
 <head>
+  <!-- ==========================================================================
+       METADATOS BÁSICOS & SEO PRINCIPAL
+       ========================================================================== -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <!-- Primary SEO Meta Tags -->
   <title>UI Components Hub — 110 Componentes Web Vanilla (HTML5, CSS3 y JavaScript)</title>
   <meta name="title" content="UI Components Hub — 110 Componentes Web Vanilla (HTML5, CSS3 y JavaScript)" />
   <meta name="description" content="Colección completa, modular y 100% Vanilla de 110 componentes UI creados en HTML5, CSS3 y JavaScript: logins, sidebars, navbars, carruseles, tablas y animaciones GSAP. Previsualización responsiva, descarga en ZIP e inspección de código fuente." />
@@ -14,11 +15,15 @@
   <meta name="theme-color" content="#09090b" />
   <link rel="canonical" href="https://bychokeyt.github.io/componentes-html-css-js/" />
 
-  <!-- SVG Favicon -->
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <!-- ==========================================================================
+       FAVICON VECTORIAL (SVG)
+       ========================================================================== -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="alternate icon" href="favicon.svg" type="image/svg+xml" />
 
-  <!-- Open Graph / Facebook / LinkedIn / Discord -->
+  <!-- ==========================================================================
+       OPEN GRAPH & TWITTER CARDS
+       ========================================================================== -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://bychokeyt.github.io/componentes-html-css-js/" />
   <meta property="og:site_name" content="UI Components Hub" />
@@ -28,7 +33,6 @@
   <meta property="og:image:alt" content="UI Components Hub — Showcase de 110 Componentes Web" />
   <meta property="og:locale" content="es_ES" />
 
-  <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://bychokeyt.github.io/componentes-html-css-js/" />
   <meta name="twitter:title" content="UI Components Hub — 110 Componentes Web Vanilla UI" />
@@ -36,7 +40,9 @@
   <meta name="twitter:image" content="https://bychokeyt.github.io/componentes-html-css-js/banner.png" />
   <meta name="twitter:creator" content="@ByChokeYT" />
 
-  <!-- Schema.org JSON-LD Structured Data for Rich Search Results -->
+  <!-- ==========================================================================
+       DATOS ESTRUCTURADOS SCHEMA.ORG (JSON-LD)
+       ========================================================================== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -73,29 +79,38 @@
   }
   </script>
   
-  <!-- Google Fonts Preconnect & Stylesheet -->
+  <!-- ==========================================================================
+       FUENTES TIPOGRÁFICAS & ICONOS
+       ========================================================================== -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
-  
-  <!-- Boxicons Vector Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
-  <!-- Prism.js Syntax Highlighting -->
+  <!-- ==========================================================================
+       PRISM.JS SYNTAX HIGHLIGHTER THEME
+       ========================================================================== -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
 
-  <!-- Main Stylesheet -->
+  <!-- ==========================================================================
+       HOJAS DE ESTILOS DE LA APLICACIÓN
+       ========================================================================== -->
+  <link rel="stylesheet" href="assets/css/index.css" />
   <link rel="stylesheet" href="index.css" />
 </head>
 <body>
 
-  <!-- Minimal Background Pattern -->
+  <!-- Textura de fondo minimalista -->
   <div class="bg-pattern" aria-hidden="true"></div>
 
-  <!-- Header / Navbar -->
+  <!-- ==========================================================================
+       CABECERA PRINCIPAL (HEADER / NAVBAR)
+       ========================================================================== -->
   <header class="app-header" role="banner">
     <div class="header-container">
+      
+      <!-- Logotipo & Enlace Inicio -->
       <a href="#" class="logo-area" id="logo-refresh-btn" title="UI Components Hub — Inicio" aria-label="UI Components Hub Inicio">
         <div class="logo-badge">
           <i class="bx bx-layer" aria-hidden="true"></i>
@@ -108,7 +123,7 @@
         </div>
       </a>
 
-      <!-- Buscador -->
+      <!-- Buscador en tiempo real -->
       <div class="search-box" role="search">
         <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <circle cx="11" cy="11" r="8"></circle>
@@ -119,27 +134,28 @@
         <span class="search-kbd" aria-hidden="true">⌘K</span>
       </div>
 
+      <!-- Acciones de Cabecera -->
       <div class="header-actions">
-        <!-- Favorites Filter Button -->
         <button type="button" class="header-fav-btn" id="header-fav-btn" title="Ver componentes favoritos" aria-label="Ver componentes favoritos">
           <i class="bx bxs-star fav-icon" aria-hidden="true"></i> Favoritos <span class="fav-count-badge" id="fav-count-badge">0</span>
         </button>
 
-        <!-- Shortcuts Help Button -->
         <button type="button" class="header-icon-btn" id="help-shortcuts-btn" title="Atajos de teclado (?)" aria-label="Abrir guía de atajos de teclado">
           <i class="bx bx-help-circle" aria-hidden="true"></i>
         </button>
 
-        <!-- Total Count Badge -->
         <span class="badge-count" id="total-count">
           <span class="live-dot" aria-hidden="true"></span>
           <span id="count-number">110</span>
         </span>
       </div>
+
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- ==========================================================================
+       SECCIÓN HERO (PRESENTACIÓN & ESTADÍSTICAS)
+       ========================================================================== -->
   <section class="hero-section" aria-labelledby="hero-main-title">
     <div class="hero-content">
       <div class="hero-pill">
@@ -152,7 +168,7 @@
         Colección modular de 110 componentes UI listos para copiar, inspeccionar y descargar en ZIP.
       </p>
 
-      <!-- Stats Bar -->
+      <!-- Barra de Estadísticas Rápidas -->
       <div class="hero-stats">
         <div class="stat-item" id="stat-total-btn" style="cursor: pointer;" title="Mostrar todos los componentes" role="button" tabindex="0">
           <span class="stat-num" id="stat-total-num">110</span>
@@ -177,10 +193,12 @@
     </div>
   </section>
 
-  <!-- Layout Principal -->
+  <!-- ==========================================================================
+       LAYOUT PRINCIPAL (FILTROS, TOOLBAR & CUADRÍCULA)
+       ========================================================================== -->
   <main class="main-layout" role="main">
     
-    <!-- Filtros de Tecnología (Segmented Control) -->
+    <!-- 1. Filtros por Tecnología (Segmented Control) -->
     <section class="tech-filters-section" aria-label="Filtros por Tecnología">
       <div class="tech-segment-group" id="tech-segment-group" role="tablist">
         <button type="button" class="tech-pill active" data-tech="all" role="tab" aria-selected="true">
@@ -198,7 +216,7 @@
       </div>
     </section>
 
-    <!-- Guía de Iconos de Referencia Rápida -->
+    <!-- 2. Guía de Iconos & Acceso Rápido a Categorías (20) -->
     <section class="icon-legend-section" aria-labelledby="legend-section-title">
       <div class="legend-header">
         <div class="legend-title">
@@ -217,7 +235,7 @@
       </div>
     </section>
 
-    <!-- Barra de Filtros por Categoría & Toolbar de Controles -->
+    <!-- 3. Barra de Herramientas, Ordenación & Vista -->
     <section class="toolbar-section" aria-label="Barra de herramientas y filtros">
       <nav class="category-filters-wrapper" aria-label="Filtros de Categoría">
         <div class="category-filters" id="category-filters">
@@ -225,14 +243,13 @@
         </div>
       </nav>
 
-      <!-- Grid Toolbar (Sort & View Switcher) -->
       <div class="grid-toolbar">
         <div class="toolbar-left">
           <span class="results-badge" id="results-badge">Mostrando <strong>110</strong> resultados</span>
         </div>
 
         <div class="toolbar-right">
-          <!-- Sorting Select -->
+          <!-- Selector de Ordenación -->
           <div class="sort-control">
             <i class="bx bx-sort-alt-2" aria-hidden="true"></i>
             <label for="sort-select" class="sr-only" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">Ordenar componentes</label>
@@ -246,7 +263,7 @@
             </select>
           </div>
 
-          <!-- View Switcher (Grid vs Compact List) -->
+          <!-- Selector de Vista (Cuadrícula vs Lista) -->
           <div class="view-switcher" role="group" aria-label="Cambiar vista de componentes">
             <button type="button" class="view-btn active" id="view-grid-btn" data-view="grid" title="Vista en Cuadrícula" aria-label="Vista en cuadrícula">
               <i class="bx bx-grid-alt" aria-hidden="true"></i>
@@ -259,15 +276,19 @@
       </div>
     </section>
 
-    <!-- Grilla de Componentes -->
+    <!-- 4. Cuadrícula de Componentes -->
     <section class="grid-container" id="grid-container" aria-label="Catálogo de Componentes">
-      <!-- Generado dinámicamente con JS -->
+      <!-- Tarjetas renderizadas dinámicamente con JS -->
     </section>
   </main>
 
-  <!-- Modal Visor Fullscreen, Code & Responsive -->
+  <!-- ==========================================================================
+       MODAL DE VISTA PREVIA, VISOR DE CÓDIGO & DISPOSITIVOS RESPONSIVOS
+       ========================================================================== -->
   <div class="modal-backdrop" id="preview-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-window">
+      
+      <!-- Barra Superior del Modal -->
       <div class="modal-bar">
         <div class="modal-left">
           <div class="browser-dots" aria-hidden="true">
@@ -281,7 +302,7 @@
           </div>
         </div>
 
-        <!-- Mode Toggle: Preview vs Code -->
+        <!-- Conmutador de Modo (Vista Previa vs Código) -->
         <div class="view-mode-toggle" role="tablist">
           <button type="button" class="mode-btn active" id="mode-btn-preview" role="tab" aria-selected="true">
             <i class="bx bx-show-alt" aria-hidden="true"></i> Vista Previa
@@ -291,7 +312,7 @@
           </button>
         </div>
         
-        <!-- Device Switcher (only in preview mode) -->
+        <!-- Conmutador de Dispositivos (Solo en modo vista previa) -->
         <div class="device-switcher" id="device-switcher" role="group" aria-label="Modo responsivo">
           <button type="button" class="device-btn active" data-device="desktop" title="Modo Escritorio (100%)" aria-label="Vista de escritorio">
             <i class="bx bx-desktop" aria-hidden="true"></i> 100%
@@ -304,6 +325,7 @@
           </button>
         </div>
 
+        <!-- Botones de Acción Rápida del Modal -->
         <div class="modal-right-actions">
           <button type="button" class="modal-icon-btn" id="modal-reload-btn" title="Recargar vista previa" aria-label="Recargar iframe">
             <i class="bx bx-refresh" aria-hidden="true"></i>
@@ -323,13 +345,15 @@
         </div>
       </div>
       
+      <!-- Cuerpo del Modal (Iframe & Panel de Código) -->
       <div class="modal-body">
-        <!-- Preview Panel -->
+        
+        <!-- Panel 1: Iframe Interactivo -->
         <div class="iframe-wrapper desktop" id="iframe-wrapper">
           <iframe id="modal-iframe" src="" title="Previsualización interactiva del componente"></iframe>
         </div>
 
-        <!-- Code Viewer Panel -->
+        <!-- Panel 2: Visor de Código Resaltado -->
         <div class="code-viewer-panel" id="code-viewer-panel">
           <div class="code-subtabs">
             <div class="code-tabs-left" role="tablist">
@@ -360,7 +384,9 @@
     </div>
   </div>
 
-  <!-- Keyboard Shortcuts Help Modal -->
+  <!-- ==========================================================================
+       MODAL DE AYUDA DE ATAJOS DE TECLADO
+       ========================================================================== -->
   <div class="modal-backdrop" id="shortcuts-modal" role="dialog" aria-modal="true" aria-labelledby="shortcuts-heading">
     <div class="shortcuts-card">
       <div class="shortcuts-header">
@@ -404,18 +430,21 @@
     </div>
   </div>
 
-  <!-- Floating Scroll To Top Button -->
+  <!-- ==========================================================================
+       ELEMENTOS FLOTANTES & NOTIFICACIONES
+       ========================================================================== -->
   <button type="button" class="scroll-top-btn" id="scroll-top-btn" title="Volver arriba" aria-label="Volver arriba">
     <i class="bx bx-chevron-up" aria-hidden="true"></i>
   </button>
 
-  <!-- Toast Notification -->
   <div class="toast-notification" id="toast" role="status" aria-live="polite">
     <i class="bx bx-check-circle toast-icon" id="toast-icon" aria-hidden="true"></i>
     <span class="toast-msg" id="toast-msg">Ruta copiada al portapapeles</span>
   </div>
 
-  <!-- Footer -->
+  <!-- ==========================================================================
+       PIE DE PÁGINA (FOOTER)
+       ========================================================================== -->
   <footer class="app-footer" role="contentinfo">
     <div class="footer-container">
       <div class="footer-brand">
@@ -433,15 +462,19 @@
     </div>
   </footer>
 
-  <!-- External CDNs for ZIP download & Syntax Highlighting -->
+  <!-- ==========================================================================
+       LIBRERÍAS EXTERNAS (JSZip, FileSaver & Prism.js)
+       ========================================================================== -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" defer></script>
 
-  <!-- Data & Application Scripts -->
-  <script src="code-data.js"></script>
-  <script src="components-data.js"></script>
-  <script src="index.js"></script>
+  <!-- ==========================================================================
+       SCRIPTS DE DATOS Y LÓGICA DE LA APLICACIÓN (ASSETS / JS)
+       ========================================================================== -->
+  <script src="assets/js/code-data.js"></script>
+  <script src="assets/js/components-data.js"></script>
+  <script src="assets/js/index.js"></script>
 </body>
 </html>

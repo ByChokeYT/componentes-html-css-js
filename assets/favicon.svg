@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Clean Neutral Dark Background -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#121215" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5"/>
+
+  <!-- UI Layout Layers -->
+  <!-- Top Navigation Header -->
+  <rect x="14" y="16" width="36" height="7" rx="3.5" fill="#fafafa"/>
+  
+  <!-- Left Sidebar / Card -->
+  <rect x="14" y="27" width="15" height="21" rx="3.5" fill="#fafafa" fill-opacity="0.85"/>
+  
+  <!-- Top Right Card -->
+  <rect x="33" y="27" width="17" height="9" rx="3" fill="#3b82f6"/>
+  
+  <!-- Bottom Right Card -->
+  <rect x="33" y="39" width="17" height="9" rx="3" fill="#fafafa" fill-opacity="0.45"/>
+</svg>
