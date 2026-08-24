@@ -74,11 +74,13 @@ Simplemente abre el archivo [`index.html`](./index.html) en tu navegador web (do
 ### 2. Auto-Indexación y Sincronización
 Si añades nuevos componentes o modificas carpetas, ejecuta:
 ```bash
-node build-index.js
+npm run build
+# o también:
+node scripts/build-index.js
 ```
-El script generará automáticamente:
-- `components-data.js`: Catálogo de metadatos, tags y configuración de categorías.
-- `code-data.js`: Bundle de código fuente HTML/CSS/JS para visualización offline sin problemas de CORS.
+El script generará y actualizará automáticamente:
+- `assets/js/components-data.js`: Catálogo de metadatos, tags y configuración de categorías.
+- `assets/js/code-data.js`: Bundle de código fuente HTML/CSS/JS para visualización offline sin problemas de CORS.
 - `sitemap.xml`: Mapa de sitio SEO con las 111 URLs actualizadas.
 - `robots.txt`: Directivas de rastreo para buscadores.
 

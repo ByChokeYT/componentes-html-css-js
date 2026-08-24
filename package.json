@@ -1,0 +1,19 @@
+{
+  "name": "ui-components-hub",
+  "version": "2.0.0",
+  "description": "Coleccion de 110 componentes UI modulares en HTML5, CSS3 y Vanilla JavaScript",
+  "main": "index.html",
+  "scripts": {
+    "build": "node scripts/build-index.js",
+    "dev": "npx serve ."
+  },
+  "keywords": [
+    "ui-components",
+    "vanilla-js",
+    "html5",
+    "css3",
+    "gsap"
+  ],
+  "author": "ByChokeYT",
+  "license": "MIT"
+}

@@ -1,4 +1,4 @@
-// Archivo generado automáticamente por build-index.js (2026-08-24T22:43:17.394Z)
+// Generado automáticamente por scripts/build-index.js (2026-08-24T22:45:35.833Z)
 window.COMPONENTS_DATA = [
   {
     "id": "acordeones-accordion-1",

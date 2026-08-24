@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const rootDir = __dirname;
+// Determine project root directory (whether run from root or scripts/)
+const rootDir = __dirname.endsWith('scripts') ? path.resolve(__dirname, '..') : __dirname;
 const SITE_URL = 'https://bychokeyt.github.io/componentes-html-css-js';
 
 const categoryConfig = {
@@ -116,7 +117,7 @@ function build() {
       if (!fs.existsSync(htmlPath)) continue;
 
       const files = fs.readdirSync(subPath);
-      const jsFiles = files.filter(f => f.endsWith('.js') && f !== 'build-index.js');
+      const jsFiles = files.filter(f => f.endsWith('.js') && !f.includes('build-index'));
       const cssFiles = files.filter(f => f.endsWith('.css'));
 
       const hasJS = jsFiles.length > 0;
@@ -191,20 +192,17 @@ function build() {
     fs.mkdirSync(assetsJsDir, { recursive: true });
   }
 
-  // Write code-data.js (both root and assets/js)
-  const codeDataContent = `// Archivo generado automáticamente por build-index.js (${new Date().toISOString()})\n` +
+  // Write strictly into assets/js/
+  const codeDataContent = `// Generado automáticamente por scripts/build-index.js (${new Date().toISOString()})\n` +
     `window.COMPONENTS_CODE = ${JSON.stringify(codeBundle, null, 2)};\n`;
-  fs.writeFileSync(path.join(rootDir, 'code-data.js'), codeDataContent, 'utf8');
   fs.writeFileSync(path.join(assetsJsDir, 'code-data.js'), codeDataContent, 'utf8');
 
-  // Write components-data.js (both root and assets/js)
-  const compDataContent = `// Archivo generado automáticamente por build-index.js (${new Date().toISOString()})\n` +
+  const compDataContent = `// Generado automáticamente por scripts/build-index.js (${new Date().toISOString()})\n` +
     `window.COMPONENTS_DATA = ${JSON.stringify(components, null, 2)};\n` +
     `window.CATEGORY_CONFIG = ${JSON.stringify(categoryConfig, null, 2)};\n`;
-  fs.writeFileSync(path.join(rootDir, 'components-data.js'), compDataContent, 'utf8');
   fs.writeFileSync(path.join(assetsJsDir, 'components-data.js'), compDataContent, 'utf8');
 
-  // Generate SEO sitemap.xml
+  // Generate SEO sitemap.xml in root
   const today = new Date().toISOString().split('T')[0];
   let sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
   sitemapXml += `  <url>\n    <loc>${SITE_URL}/</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>\n`;
@@ -215,24 +213,19 @@ function build() {
   sitemapXml += `</urlset>\n`;
   fs.writeFileSync(path.join(rootDir, 'sitemap.xml'), sitemapXml, 'utf8');
 
-  // Generate robots.txt
+  // Generate robots.txt in root
   const robotsTxt = `# robots.txt para UI Components Hub\nUser-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`;
   fs.writeFileSync(path.join(rootDir, 'robots.txt'), robotsTxt, 'utf8');
 
-  // Copy to scripts/build-index.js
-  const scriptsDir = path.join(rootDir, 'scripts');
-  if (!fs.existsSync(scriptsDir)) fs.mkdirSync(scriptsDir, { recursive: true });
-  fs.writeFileSync(path.join(scriptsDir, 'build-index.js'), fs.readFileSync(__filename, 'utf8'), 'utf8');
-
   console.log(`\n========================================`);
-  console.log(`✅ ESTRUCTURA Y ARCHIVOS SINCRONIZADOS`);
+  console.log(`✅ INDEXACIÓN LIMPIA & MODULAR COMPLETADA`);
   console.log(`Total componentes: ${components.length}`);
   console.log(`- Con JavaScript: ${components.filter(c => c.hasJS).length}`);
   console.log(`- Pure CSS: ${components.filter(c => !c.hasJS).length}`);
   console.log(`- Total Categorías: ${categories.length}`);
-  console.log(`- Archivos en assets/js/ y raíz actualizados`);
+  console.log(`- Archivos generados estrictamente en assets/js/`);
   console.log(`- URLs en sitemap.xml: ${components.length + 1}`);
-  console.log(`- robots.txt generado`);
+  console.log(`- robots.txt generado en raíz`);
   console.log(`========================================\n`);
 }
 
