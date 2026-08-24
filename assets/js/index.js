@@ -544,6 +544,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
     });
+
+    // Touch & tap trigger for card previews on mobile
+    gridContainer.querySelectorAll('.card-preview').forEach(preview => {
+      preview.addEventListener('click', (e) => {
+        if (!e.target.closest('button') && !e.target.closest('a')) {
+          const card = preview.closest('.component-card');
+          if (card) {
+            const item = allComponents.find(c => c.id === card.dataset.id);
+            if (item) openModal(item, 'preview');
+          }
+        }
+      });
+    });
   }
 
   // Toast Notification System

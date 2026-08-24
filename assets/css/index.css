@@ -1690,13 +1690,323 @@ body {
   font-size: 11.5px;
 }
 
-/* Responsive adjustments */
+/* ==========================================================================
+   OPTIMIZACIÓN PROFESIONAL RESPONSIVA (TABLETS & MÓVILES / CELULARES)
+   ========================================================================== */
+
+/* Tablets & Pantallas Medianas (<= 992px) */
+@media (max-width: 992px) {
+  .app-header {
+    padding: 10px 18px;
+  }
+
+  .main-layout {
+    padding: 8px 18px 48px;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+  }
+
+  .legend-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+}
+
+/* Teléfonos y Pantallas Móviles (<= 768px) */
 @media (max-width: 768px) {
-  .app-header { padding: 10px 16px; }
-  .main-layout { padding: 8px 16px 40px; }
-  .header-container { flex-direction: column; align-items: stretch; }
-  .hero-title { font-size: 22px; }
-  .hero-description { font-size: 12.5px; }
-  .grid-container { grid-template-columns: 1fr; }
-  .legend-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+  .app-header {
+    padding: 8px 14px;
+  }
+
+  .header-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .logo-area {
+    justify-content: flex-start;
+  }
+
+  .search-box {
+    max-width: 100%;
+    order: 2;
+  }
+
+  .search-box input {
+    height: 38px;
+    font-size: 13.5px;
+  }
+
+  .header-actions {
+    justify-content: space-between;
+    width: 100%;
+    order: 3;
+  }
+
+  .hero-section {
+    padding: 18px 12px 10px;
+  }
+
+  .hero-title {
+    font-size: 22px;
+    line-height: 1.25;
+  }
+
+  .hero-description {
+    font-size: 12.5px;
+    margin-bottom: 14px;
+  }
+
+  .hero-stats {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 6px 12px;
+    gap: 8px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .stat-num {
+    font-size: 15px;
+  }
+
+  .stat-lbl {
+    font-size: 9.5px;
+  }
+
+  .stat-divider {
+    height: 18px;
+  }
+
+  /* Segmented Tech Filter Bar */
+  .tech-filters-section {
+    margin-bottom: 12px;
+  }
+
+  .tech-segment-group {
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 3px;
+    justify-content: flex-start;
+  }
+
+  .tech-segment-group::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tech-pill {
+    flex-shrink: 0;
+    padding: 6px 11px;
+    font-size: 11.5px;
+  }
+
+  /* Category Quick Legend */
+  .icon-legend-section {
+    padding: 12px 14px;
+    margin-bottom: 14px;
+  }
+
+  .legend-header {
+    margin-bottom: 10px;
+  }
+
+  .legend-title h2 {
+    font-size: 13px;
+  }
+
+  .legend-subtitle {
+    display: none;
+  }
+
+  .legend-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  .legend-chip {
+    padding: 6px 8px;
+    gap: 6px;
+  }
+
+  .chip-icon-box {
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+  }
+
+  .chip-name {
+    font-size: 11px;
+  }
+
+  /* Grid Toolbar & Sorting */
+  .grid-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 8px 12px;
+  }
+
+  .toolbar-left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .toolbar-right {
+    justify-content: space-between;
+  }
+
+  .sort-control {
+    flex: 1;
+  }
+
+  .sort-select {
+    width: 100%;
+  }
+
+  /* Cards on Mobile */
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .card-preview {
+    height: 165px;
+  }
+
+  .card-info {
+    padding: 10px 12px;
+    gap: 6px;
+  }
+
+  .card-title-row h4 {
+    font-size: 13px;
+  }
+
+  .card-footer {
+    padding-top: 6px;
+  }
+
+  .path-btn {
+    max-width: 140px;
+    font-size: 10px;
+  }
+
+  /* Modal on Mobile */
+  .modal-backdrop {
+    padding: 6px;
+  }
+
+  .modal-window {
+    width: 100%;
+    height: 94vh;
+    border-radius: 10px;
+  }
+
+  .modal-bar {
+    padding: 6px 10px;
+    gap: 8px;
+  }
+
+  .modal-title {
+    font-size: 12.5px;
+    max-width: 130px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .modal-path-chip {
+    display: none;
+  }
+
+  .device-switcher {
+    display: none;
+  }
+
+  .view-mode-toggle .mode-btn {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+
+  .modal-body {
+    padding: 8px;
+  }
+
+  .modal-right-actions {
+    gap: 4px;
+  }
+
+  .modal-icon-btn, .close-btn {
+    width: 26px;
+    height: 26px;
+    font-size: 12px;
+  }
+
+  .code-subtabs {
+    padding: 4px 10px;
+  }
+
+  .code-tab {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+
+  .copy-code-btn {
+    padding: 4px 8px;
+    font-size: 10.5px;
+  }
+
+  .code-content-area pre {
+    font-size: 11.5px;
+  }
+
+  /* Floating UI */
+  .scroll-top-btn {
+    bottom: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .toast-notification {
+    bottom: 14px;
+    padding: 6px 12px;
+    font-size: 11.5px;
+    max-width: 90vw;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+/* Pantallas Extra Pequeñas (<= 400px) */
+@media (max-width: 400px) {
+  .hero-title {
+    font-size: 19px;
+  }
+
+  .legend-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-pill {
+    padding: 5px 9px;
+    font-size: 11px;
+  }
+
+  .stat-lbl {
+    display: none;
+  }
 }
